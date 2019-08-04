@@ -177,6 +177,18 @@ class LinkedList {
     const node = new Node(data, previous.next);
     previous.next = node;
   } // end insertAt()
+
+  midPoint(list) {
+    let slow = this.getAt(0);
+    let fast = this.getAt(0);
+
+    // loop until two nodes after fast are found
+    while (fast.next && fast.next.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    return slow;
+  } // end midPoint()
 } // end LinkedList Class
 
 console.log("\n-----------------------------------------------------------");
@@ -224,8 +236,13 @@ console.log(JSON.stringify(list));
 // insertAt()
 console.log();
 list.insertAt(50, 2);
-console.log("Linked list after insertAT(50,2):");
+list.insertAt(51, 3);
+list.insertAt(52, 4);
+list.insertAt(53, 5);
+// console.log("Linked list after insertAT(50,2):");
 console.log(JSON.stringify(list));
+
+console.log(list.midPoint());
 
 console.log("\n-----------------------------------------------------------");
 
