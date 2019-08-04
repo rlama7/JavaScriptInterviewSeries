@@ -30,8 +30,11 @@ class LinkedList {
 
   // insertFirst()
   insertFirst(data) {
-    const node = new Node(data, this.head);
-    this.head = node;
+    // const node = new Node(data, this.head);
+    // this.head = node;
+
+    // OR
+    this.insertAt(data, 0);
   } // end insertFirst()
 
   // size() returns the size of the Linked List
@@ -48,22 +51,26 @@ class LinkedList {
 
   // getFirst() returns the first node from the LinkedList
   getFirst() {
-    return this.head;
+    // return this.head;
+    // OR
+    this.getAt(0);
   } // end getFirst()
 
   // getLast() returns the last node from the LinkedList
   getLast() {
-    if (!this.head) {
-      return null;
-    }
-    let node = this.head;
-    while (node) {
-      // if the next node does not exist then the node must be the last node so return it
-      if (!node.next) {
-        return node;
-      }
-      node = node.next;
-    }
+    // if (!this.head) {
+    //   return null;
+    // }
+    // let node = this.head;
+    // while (node) {
+    //   // if the next node does not exist then the node must be the last node so return it
+    //   if (!node.next) {
+    //     return node;
+    //   }
+    //   node = node.next;
+    // }
+    // OR
+    this.getAt(this.size() - 1);
   } // end getLast()
 
   // clear() completely clears out the LinkedList
@@ -74,32 +81,36 @@ class LinkedList {
   // removeFirst() removes the first node from the LinkedList
   removeFirst() {
     // check if the first node exists
-    if (!this.head) {
-      return;
-    }
-    this.head = this.head.next;
+    // if (!this.head) {
+    //   return;
+    // }
+    // this.head = this.head.next;
+    // OR
+    return this.removeAt(0);
   }
   // removeLast() removes the last node from the LinkedList
   removeLast() {
     // test empyt list
-    if (!this.head) {
-      return;
-    }
+    // if (!this.head) {
+    //   return;
+    // }
     // test only a single node
-    if (!this.head.next) {
-      this.head = null;
-      return;
-    }
+    // if (!this.head.next) {
+    //   this.head = null;
+    //   return;
+    // }
     // all Else condition
-    let previous = this.head;
-    let node = this.head.next;
-
-    while (node.next) {
-      previous = node;
-      node = node.next;
-    }
+    // let previous = this.head;
+    // let node = this.head.next;
+    // while (node.next) {
+    //   previous = node;
+    //   node = node.next;
+    // }
     // we've reached the last node
-    previous.next = null;
+    // previous.next = null;
+
+    // OR
+    return this.removeAt(this.size() - 1);
   } // end removeLast()
 
   // insertLast() inserts data to the last node of the Linked List
@@ -148,6 +159,24 @@ class LinkedList {
     }
     previous.next = previous.next.next; // skip the one in the middle
   } // end removeAt()
+
+  // insertAt() inserts a node at a given index in the chain
+  insertAt(data, index) {
+    // check empty list
+    if (!this.head) {
+      this.head = new Node(data);
+      return;
+    }
+    // insert at index 0
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+    // insert node at any given index
+    const previous = this.getAt(index - 1) || this.getLast;
+    const node = new Node(data, previous.next);
+    previous.next = node;
+  } // end insertAt()
 } // end LinkedList Class
 
 console.log("\n-----------------------------------------------------------");
@@ -187,7 +216,16 @@ console.log("LinkedList after calling insertLast: " + JSON.stringify(list));
 console.log("getAt(2): " + JSON.stringify(list.getAt(2)));
 
 // removeAt()
-console.log("removeAt(1): " + JSON.stringify(list.removeAt(1)));
+console.log();
+list.removeAt(1);
+console.log("Linked list after removeAt(1):");
+console.log(JSON.stringify(list));
+
+// insertAt()
+console.log();
+list.insertAt(50, 2);
+console.log("Linked list after insertAT(50,2):");
+console.log(JSON.stringify(list));
 
 console.log("\n-----------------------------------------------------------");
 
