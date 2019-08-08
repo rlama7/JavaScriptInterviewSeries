@@ -1,7 +1,7 @@
 /**
  * Stack.js         -A program to implement a stack data structure. A stack data structure implements LIFO -
  *                   Last In First Out.
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/03/2019
  *

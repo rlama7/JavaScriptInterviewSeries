@@ -1,6 +1,6 @@
 /**
  * levelWidth.js    -A program to find the level width of a tree.
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/07/2019
  *

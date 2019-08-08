@@ -1,6 +1,6 @@
 /**
  * linkedList.js    -A program to implement a linked list data structure
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/03/2019
  *

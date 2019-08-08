@@ -1,6 +1,6 @@
 /**
  * midPoint.js      -A program to find the middle node of a linked list chain
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/04/2019
  *

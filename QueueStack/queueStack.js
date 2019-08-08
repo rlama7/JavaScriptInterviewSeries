@@ -2,7 +2,7 @@
  * queueStack.js    -A program to implement a queue data structure using two stacks.
  *                   A Queue data structure implements FIFO - First In First Out.
  *                   Do not create an array inside of the Queue Class
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/03/2019
  *

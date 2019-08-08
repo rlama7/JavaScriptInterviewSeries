@@ -1,6 +1,6 @@
 /**
  * binarySearchTree.js    -A program to implement a binary search tree.
- * @authoer                Ratna Lama
+ * @author                 Ratna Lama
  * @version                1.0
  * @since                  08/07/2019
  *
@@ -10,8 +10,9 @@
  * Also every node's left hand child is less than the parent node's value, and
  * that every node's right hand child is greater than the parent.
  *
- * Time Complexity for Search and Access:
- * Time Complexity for Insertion and Deletion:
+ * Time Complexity for Search and Access: O(log(n)) --> Average Case
+ * Time Complexity for Insertion and Deletion: O(log(n)) --> Average Case
+ * Worst Case Time complexity: O(n)
  */
 
 class Node {

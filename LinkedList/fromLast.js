@@ -1,7 +1,7 @@
 /**
  * fromLast.js          -A program to find the element n spaces from the last node in the linked list, given
  *                       a LinkedList and an index.
- * @authoer              Ratna Lama
+ * @author               Ratna Lama
  * @version              1.0
  * @since                08/04/2019
  *

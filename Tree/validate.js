@@ -2,7 +2,7 @@
  * validate.js            -A program to validate that a given tree is in fact a binary search tree, i.e,
  *                         Every node's left hand child is less than the parent node's value and that every
  *                         node's right hand child is greater than the parent.
- * @authoer                Ratna Lama
+ * @author                 Ratna Lama
  * @version                1.0
  * @since                  08/07/2019
  *

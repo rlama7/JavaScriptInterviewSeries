@@ -1,6 +1,6 @@
 /**
  * tree.js          -A program to implement a tree data structure.
- * @authoer          Ratna Lama
+ * @author           Ratna Lama
  * @version          1.0
  * @since            08/07/2019
  *

@@ -1,6 +1,6 @@
 /**
  * circularList.js      -A program to find if a linked list chain is circular
- * @authoer              Ratna Lama
+ * @author               Ratna Lama
  * @version              1.0
  * @since                08/04/2019
  *
