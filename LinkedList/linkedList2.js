@@ -111,21 +111,16 @@ class LinkedList {
             this.head = node;
         }
     }
+    
+    // reverse a linked list --> iterative approach time: O(n) and space: O(1)
+    reverseListIr() {
 
-    // circular
-    isCircular(list) {
-        let slow = list.getFirst();
-        let fast = list.getFirst();
-
-        while(fast.next && fast.next.next) {
-            if (slow === fast) {
-                return true;
-            }
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        return false;
     }
+
+
+
+    // recursively reverse a linked list
+
 }
 
 const n1 = new Node(5);
@@ -155,5 +150,23 @@ list.removeLast();
 console.log(JSON.stringify(list));
 
 list.insertLast(999);
+console.log(JSON.stringify(list));
+
+// circular
+const isCircular = (list) => {
+    let slow = list.head;
+    let fast = list.head;
+
+    while(fast.next && fast.next.next) {
+        if (slow === fast) {
+            return true;
+        }
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return false;
+}
+
+console.log(isCircular(list));
 console.log(JSON.stringify(list));
 
