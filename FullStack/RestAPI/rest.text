@@ -1,0 +1,23 @@
+// REST VERBS
+GET -->
+POST --> CREATE
+PUT/PATCH --> UPDATE
+    PUT --> completely replace the previous data
+    PATCH --> replace the part of the previous data
+DELETE --> DELETE
+
+// CRUD
+CREATE
+READ
+UPDATE
+DELETE
+
+// Use Specific Pattern of Routes/Endpoint URLs
+
+HTTP VERBS          /articles                       /articles/jack-bauer
+-----------------------------------------------------------------------------------------------
+GET                 fetch all the articles          fetches the article on jack-bauer
+POST                creates one new article                      --
+PUT                          -                      updates the article on jack-bauer
+PATCH                        -                      "   "   "
+DELETE              Deletes all the articles        Delete the article on jack-bauer

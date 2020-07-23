@@ -1,0 +1,64 @@
+// 1. JavaScript (JS)
+JavaScript is a multi-paradigm, supporting imerative/procedural programming along with 
+Object Oriented (OOP) programming and functional programming. JS supports OOP with prototypal 
+inheritance
+* prototypal inheritance --> aka prototypes
+
+* functional programming --> aka closures, first-class functions, lambdas
+Functional paradigm is a style of building the structure and elements of computer programs, that 
+treats computation as the evaluation of mathematical functions and avoids changing-state and 
+mutable data.
+
+Pure functions --> A pure function is a function that given the same type of inputs will alywas return the 
+same output, it is not dependent on a local or global state.
+
+* OOP --> es6 classes, super, factories, getter/setter
+OOP is a paradigm based on the concepts of "objects" which may contain data, in the form of fields, often 
+known as attributes, and code, in the form of procedures, often known as methods. Encapsulation, inheritance and 
+polymorphism are the three tenets of OOP.
+
+Abstraction can be though of as an extension to encapsulation. The internal mechanism of how objects function 
+should be hidden and should only reveal operations relevant for the other objects. 
+
+A fine example would be how a cell phone operates. A user may only see buttons and result of pressing a buttons/icons 
+not necessarily how the function is carried out under the hood.
+
+inheritance --> is one object resembles a lot to next object but with only slight variations then the other object 
+should not simply make "inherit" from the first object. this is called inheritance. It means that a child class is 
+created deriving from the parent class. This way we form hierarchy and avoid repeating codes.
+
+Encapsulation --> Each object manages its own state via methods and no other class can change it. Other 
+object should use methods provided to communicate with the another object.
+inheritance
+
+polymorphism --> polymorphism leads a way to use a class exactly like its parent so there is now confusion 
+mixing types, but each child class keeps its own methods as they are.
+
+we can define a parent interface to be reuse. it outlines a bunch of comon mehtods. Then each child class 
+implements its own version of these methods.
+
+Example: Figure interface -> calculateSurface(); CalculatePerimeter() // --> whoever implement must define the methods
+
+Trinalge class; Circle Class, Rectangle class  --> each implements its own definition of 
+calculateSurface() and CalculatePerimeter() methods.
+
+
+
+* procedural programming -> is a paradigm, derived from structured programming, based upon the concept of the 
+procedure call. Proceduers, also known as routines, subroutines, or functions simply contain a series of 
+computations steps to be carried out
+
+* Separation of concern --> aka SoC is a design principle for separating a computer program into distinct sections, 
+such that each section addresses a separacte concern. Soc is supposed to keep the code orgranized.
+
+
+
+
+
+
+
+// 2. Node.JavaScript
+// 3. Databases & Web Storage
+// 4. HTTP & Rest
+// 5. Web Application Architecture
+// 6. Algorithms & Data Structures
