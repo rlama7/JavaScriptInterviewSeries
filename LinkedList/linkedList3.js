@@ -207,6 +207,56 @@ class LinkedList {
         // A --> NEW --> B --> C --> D
     }
 
+    /**
+     * reverse(list) --> reverse a linked list
+     * 
+     * Example: 
+     * 1--> 2 --> 3 --> 4 --> NULL
+     * reverse(list)
+     * 4 --> 3 --> 2 --> 1 --> NULL 
+     * 
+     * Algorithm:
+     * Initialize three pointers: 
+     *      --> previous === NULL
+     *      --> current === this.head
+     *      --> next === NULL
+     * loop
+     *      // before changing next of current, store next node
+     *      -> next = current->next
+     *      // then change next of current node; this is where the reverse happens
+     *      -> current->next = previous
+     *      // move previous and current one step forward
+     *      -> previous = current
+     *      -> current = next
+     * 
+     */
+    reverseIterative(list)  {
+        let prev = null;
+        let current = this.head;
+        let next = null;
+        // loop as long a the node exists
+        while(current) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            // exit strategy
+            current = next;
+        }
+        this.head = prev;
+        // console.log(list.head);
+    }
+
+    // reverseRecursive(list) {
+    //     let node = this.head;
+    //     if (!node || !node.next) {
+    //         return node;
+    //     }
+    //     let temp = reverse(node.next);
+    //     node.next.next = node;
+    //     node.next = undefined;
+    //     return temp;
+    // }
+
     // forEach() --> calls the provided function with every 
 
     // node of the chain and the index of the node..
@@ -235,49 +285,26 @@ list.removeLastNode()   // 9
 console.log(list); // 9999 --> 1000 --> 10 --> {last Node removed } -->  
 
 // call insertLast()
-list.insertLast('last');
-console.log(list);  // 9999 --> 1000 --> 10 --> "last"
+list.insertLast('TAIL');
+console.log(list);  // 9999 --> 1000 --> 10 --> "TAIL"
 
 // getNodeAt(index)
 console.log(list.getNodeAt(3));
 
 // removeNodeAt(index)
 list.removeNodeAt(1);
-console.log(list);  // 9999 --> 10 --> "last"
+console.log(list);  // 9999 --> 10 --> "TAIL"
 
 // insertNodeAt(index)
 list.insertNodeAt(1, 'NEW');
-console.log(list);  // 9999 --> 'NEW' ---> 10 --> "last"
+console.log(list);  // 9999 --> 'NEW' ---> 10 --> "TAIL"
 
-/**
- * reverse(list) --> reverse a linked list
- * 
- * Example: 
- * 1--> 2 --> 3 --> 4 --> NULL
- * reverse(list)
- * 4 --> 3 --> 2 --> 1 --> NULL 
- * 
- * Algorithm:
- * Initialize three pointers: 
- *      --> previous === NULL
- *      --> current === this.head
- *      --> next === NULL
- * loop
- *      // before changing next of current, store next node
- *      -> next = current->next
- *      // then change next of current node; this is where the reverse happens
- *      -> current->next = previous
- *      // move previous and current one step forward
- *      -> previous = current
- *      -> current = next
- * 
- */ 
-const reverseIterative = (list) =>  {
-    
-    console.log(list.head);
-}
+list.insertNodeAt(0, 'HEAD') // 'HEAD' --> 9999 --> 'NEW' ---> 10 --> "TAIL"
 
-reverseIterative(list); // 9999 --> 'NEW' ---> 10 --> "last"
-// reverseRecursive(list){
 
-// }
+// reverse linkedlist iterative 
+list.reverseIterative(list); // 'HEAD' <-- 9999 <-- 'NEW' <--- 10 <-- "TAIL"
+
+// const recur = list.reverseRecursive(list);
+// console.log(recur);
+
