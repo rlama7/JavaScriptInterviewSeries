@@ -309,5 +309,5 @@ list.insertNodeAt(0, 'HEAD') // 'HEAD' --> 9999 --> 'NEW' ---> 10 --> "TAIL"
 // list.reverseIterative(list); // 'HEAD' <-- 9999 <-- 'NEW' <--- 10 <-- "TAIL"
 
 // const recur = list.reverseRecursive(list);
-console.log(recur);
 
+// console.log(recur); // will test later
