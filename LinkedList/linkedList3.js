@@ -245,17 +245,20 @@ class LinkedList {
         this.head = prev;
         // console.log(list.head);
     }
+    
+    // recursive approach to reverse LinkedList
+    reverseRecursive(ll) {
+        let node = this.head;
 
-    // reverseRecursive(list) {
-    //     let node = this.head;
-    //     if (!node || !node.next) {
-    //         return node;
-    //     }
-    //     let temp = reverse(node.next);
-    //     node.next.next = node;
-    //     node.next = undefined;
-    //     return temp;
-    // }
+        // base case --> EXIT scenario
+        if (!node || !node.next) {
+            return node;
+        }
+        let temp = reverseRecursive(node.next);
+        node.next.next = node;
+        node.next = undefined;
+        return temp;
+    }
 
     // forEach() --> calls the provided function with every 
 
@@ -303,7 +306,7 @@ list.insertNodeAt(0, 'HEAD') // 'HEAD' --> 9999 --> 'NEW' ---> 10 --> "TAIL"
 
 
 // reverse linkedlist iterative 
-list.reverseIterative(list); // 'HEAD' <-- 9999 <-- 'NEW' <--- 10 <-- "TAIL"
+// list.reverseIterative(list); // 'HEAD' <-- 9999 <-- 'NEW' <--- 10 <-- "TAIL"
 
 // const recur = list.reverseRecursive(list);
 // console.log(recur);
