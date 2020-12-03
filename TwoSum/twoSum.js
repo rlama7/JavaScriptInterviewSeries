@@ -44,7 +44,7 @@
  * Space Complexity O(1) --> No auxiliary structures are created
  */
 
-const twoSum = (array, k) => {
+const twoSumBruteForce = (array, k) => {
   for (let i = 0; i < array.length; i++) {
     for (let j = i + 1; j < array.length; j++) {
       if (array[i] + array[j] == k) {
@@ -59,4 +59,16 @@ const twoSum = (array, k) => {
 };
 
 const n = [1, 2, 3, 5, 6, 7, 9, 0];
-console.log(twoSum(n, 8));
+console.log(twoSumBruteForce(n, 8));
+
+/**
+ *
+ * RUN locally --> $ node twoSum.js
+ *
+ * OUTPUT ---------->
+ *
+ * two pairs are: [1, 7] --> yield sum: 8
+ * true
+ * <----------
+ *
+ */
