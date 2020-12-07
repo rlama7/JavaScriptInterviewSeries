@@ -131,7 +131,7 @@ const twoSumSortSearch = (arr, k) => {
     if (siblingIndex >= 0) {
       // found it
       /**
-       * If this points a us, then the pair exists only if
+       * If this points at us, then the pair exists only if
        * there is another copy of the element.
        */
       if (
@@ -208,4 +208,44 @@ console.log(
   '\n+-------------------TwoSumSortSearch----------------------------------+'
 );
 
-twoSumSortSearch(arrSB, 11);
+twoSumSortSearch(arrSB, 15);
+
+console.log(
+  '\n+-------------------OPTION #4----------------------------------+'
+);
+/**
+ * OPTION #4  Sorting and Walking Inward
+ *
+ * -sort the array, then walk two pointers inward from the ends of the array,
+ * at each pint looking at their sum. If it's exactly k, then we're done.
+ * If it exceeds k, then any sum using the larger element is too large, so
+ * we walk that pointer inwards. If it's less than ke, then any sum using the lower
+ * element is too small, so we walk that pointer inwards.
+ *
+ * Time complexity: O(n log n) due to cost of sorting
+ * Space Complexity: O(log n) fo quick sort/radix sort
+ *                 : O(1) if used heapsort
+ */
+
+const towSumSortWalkInward = (arr, k) => {
+  // sort the array
+  arr.sort((a, b) => a - b);
+
+  let lhs = 0,
+    rhs = arr.length - 1;
+
+  while (lhs < rhs) {
+    let sum = arr[lhs] + arr[rhs];
+
+    if (sum === k) return true;
+    else if (sum < k) lhs++;
+    else rhs--;
+  }
+  return false;
+};
+
+const arrW = [9, 0, -5, 8, 1, 7, 3];
+console.log(`Unsorted array is ${arrW}`);
+
+console.log(towSumSortWalkInward(arrW, 16));
+console.log(towSumSortWalkInward(arrW, 25));
