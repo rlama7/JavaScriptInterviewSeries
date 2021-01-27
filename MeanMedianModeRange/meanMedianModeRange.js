@@ -19,13 +19,13 @@
 
 const findMeanMedianModeRange = (arr) => {
     const result = [];
-    result.push(findMean(arr), findMedian(arr), findMode(arr), findRange(arr), findSum(arr));
+    result.push(findMean(arr), findMedian(arr), findMode(arr), findRange(arr), findSum(...arr));
     return result;
 };
 
-// calculate Mean
+// calculate Mean then round to the nearest five digit precision
 const findMean = (arr) => {
-    return findSum() / arr.length;
+    return roundToFiveDigit(findSum(...arr) / arr.length);
 };
 
 // calculate Median
@@ -45,30 +45,48 @@ const findRange = (arr) => {
 
 // calculate the sum of all values in a given aray
 const findSum = (...arr) => {
-    return arr.reduce((accumulatorValue, currentValue) => accumulatorValue+currentValue, 0);
+    return (arr.reduce((accumulatorValue, currentValue) => accumulatorValue+currentValue, 0));
 };
 
 // calculate Min
 
 // calculate Max
 
-
+// Helper function to round number to five digits precision
+const roundToFiveDigit = (num) => (Math.round(num *10000) + Number.EPSILON) / 10000;
+// console.log("round to five --> " + roundToFiveDigit(3.7142857142857144));
 
 const arr1 = [3,5,9,0,-6,10,5];
 const arr2 = [10,20,50];
 // console.log('sum --> ' + Math.sum(...arr2));
-console.log('Max --> ' + Math.max(...arr2));
-console.log('Min --> ' + Math.min(...arr2));
-arr1.push(...arr2);
+
+// arr1.push(...arr2);
+// console.log(arr1);
+
+
+
+console.log('\n---------------Original Array1---------------------');
 console.log(arr1);
+console.log('\n---------------Destructured Original Array1 Elements---------------------');
+console.log(...arr1);
+console.log('\n---------------findSum()---------------------');
+let sum = findSum(...arr1);
+console.log(`Sum of array1 elements --> ${sum}`);
 
-console.log('/n---------------findSum---------------------');
-console.log('Sum of array1 elements -->' + findSum(arr1));
+console.log('\n---------------findMean()---------------------');
+console.log('Mean of array1 elements before rounding --> ' + (sum)/arr1.length);
+console.log('Mean of array1 elements after rounding --> ' + findMean(arr1));
 
-console.log('/n---------------findMean---------------------');
-console.log('Mean of array1 elements --> ' + findMean(arr1));
+console.log('\n---------------findMedian()---------------------');
 
-console.log('/n---------------findMedian---------------------');
-console.log('');
-console.log(findMeanMedianModeRange(arr2));
-console.log(arr2.reduce((a,b) => a+b, 0));
+console.log('\n---------------findMax()---------------------');
+console.log('Max --> ' + Math.max(...arr1));
+
+console.log('\n---------------findMin()---------------------');
+console.log('Min --> ' + Math.min(...arr1));
+
+
+
+// console.log('');
+// console.log(findMeanMedianModeRange(arr2));
+// console.log(arr2.reduce((a,b) => a+b, 0));
