@@ -75,7 +75,24 @@ const findMedian = (arr) => {
 
 // calculate Mode
 const findMode = (arr) => {
-    return 5;
+    // create an object hash of array elements
+    let count = {};
+
+    arr.forEach((item) => {
+        if (count[item] === undefined) {
+            count[item] = 0;
+        }
+        count[item]++;
+    });
+
+    // convert object to array
+    // Arr1 --> count: {"1":4,"3":2,"5":2,"7":1,"10":1,"11":1,"-2":1}
+    // Arr2 --> count: {"1":1,"3":1,"5":1,"6":1,"9":1}
+
+    // 
+    let convertedArr = Object.values(count);
+    // use Max/Min to find the max and min from the array
+    return count;
 };
 
 // calculate Range
@@ -132,6 +149,10 @@ console.log('sorted array1 --> ' + sortArrayElements(...arr1));
 console.log('median of array1 elements EVEN LENGTH--> ' + findMedian(arr1));
 console.log('sorted array2 --> ' + sortArrayElements(...arr2));
 console.log('median of array2 elements ODD LENGTH--> ' + findMedian(arr2));
+
+console.log('\n---------------findMode()---------------------');
+console.log('Mode Object in Array1 --> ' + JSON.stringify(findMode(arr1)));
+console.log('Mode Object in Array2 --> ' + JSON.stringify(findMode(arr2)));
 
 console.log('\n---------------findRange()---------------------');
 console.log('Range in Array1 --> ' + findRange(arr1));
