@@ -23,8 +23,14 @@
  * 
  * NOTE: array elements index start from 0 therefore we'll need to take count and count-1 instead
  * 
- * Mode or frequency
- * Range
+ * Mode or frequency is the value that is repeated more often than any other value.
+ * In the case there are same number of repeated values, take the one with the lowest value
+ * Example:- 1,2,3,2,3,1 --> take 1 as mode.
+ * 
+ * 
+ * Range is the difference between the largest and the smallest value in the array.
+ * sort the array elements
+ * then largest element - smallest element --> range
  * 
  * Print real number up to 5 digits.
  * If more than one number ahs the same frequency, then choose the smallest number as a mode.
@@ -74,7 +80,9 @@ const findMode = (arr) => {
 
 // calculate Range
 const findRange = (arr) => {
-    return 7;
+    const sortedArr = sortArrayElements(...arr);
+    let len = sortedArr.length;
+    return (sortedArr[len - 1] - sortedArr[0]);
 };
 
 // calculate the sum of all values in a given aray
@@ -124,6 +132,11 @@ console.log('sorted array1 --> ' + sortArrayElements(...arr1));
 console.log('median of array1 elements EVEN LENGTH--> ' + findMedian(arr1));
 console.log('sorted array2 --> ' + sortArrayElements(...arr2));
 console.log('median of array2 elements ODD LENGTH--> ' + findMedian(arr2));
+
+console.log('\n---------------findRange()---------------------');
+console.log('Range in Array1 --> ' + findRange(arr1));
+console.log('Range in Array2 --> ' + findRange(arr2));
+
 
 console.log('\n---------------findMin()---------------------');
 console.log('Minimum value in Array1 --> ' + findMin(arr1));
