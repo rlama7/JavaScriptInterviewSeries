@@ -49,6 +49,7 @@ const findSum = (...arr) => {
 };
 
 // calculate Min
+const findMin = (arr) => Math.min(...arr);
 
 // calculate Max
 
@@ -83,7 +84,7 @@ console.log('\n---------------findMax()---------------------');
 console.log('Max --> ' + Math.max(...arr1));
 
 console.log('\n---------------findMin()---------------------');
-console.log('Min --> ' + Math.min(...arr1));
+console.log('Minima in Array1 --> ' + findMin(arr1));
 
 
 
