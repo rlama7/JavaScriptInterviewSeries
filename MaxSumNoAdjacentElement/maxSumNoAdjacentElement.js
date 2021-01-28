@@ -7,11 +7,6 @@
  * output: 3 + 8 + 1 --> 12
  * 
  */
-
-const arr = [3,7,8,2,1];
-const arr2 = [1,0,9,2,8,3,7,4,6,5,-20];
-const arr3 = [3,2,7,10];
-
 const maxSumNoAdjacentElements = (arr) => {
 
     let exclude = 0;
@@ -25,8 +20,13 @@ const maxSumNoAdjacentElements = (arr) => {
     return include;    
 };
 
+const arr1 = [3,7,8,2,1];
+const arr2 = [1,0,9,2,8,3,7,4,6,5,-20];
+const arr3 = [3,2,7,10];
+
 // max returns the max of number(s)
-console.log('max of 5, 7, 9, 10, -16, 12 --> ' + Math.max(5,7, 9, 10, -16, 12));
-console.log('arr1 --> ' + maxSumNoAdjacentElements(arr));
-console.log('arr2 --> ' + maxSumNoAdjacentElements(arr2));
-console.log('arr3 --> ' + maxSumNoAdjacentElements(arr3));
+console.log('Max of 5, 7, 9, 10, -16, 12 --> ' + Math.max(5,7, 9, 10, -16, 12));
+console.log(`Max of Arr1:  --> [${arr1}] --> ${Math.max(...arr1)}`);
+console.log(`Arr1 --> [${arr1}] MaxSumNoAdjacentElements --> ${maxSumNoAdjacentElements(arr1)}`);
+console.log(`Arr2 --> [${arr2}] MaxSumNoAdjacentElements --> ${maxSumNoAdjacentElements(arr2)}`);
+console.log(`Arr3 -->[${arr3}] MaxSumNoAdjacentElements --> ${maxSumNoAdjacentElements(arr3)}`);
