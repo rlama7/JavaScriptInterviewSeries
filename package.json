@@ -1,0 +1,39 @@
+{
+  "name": "javascriptinterviewseries",
+  "version": "1.0.0",
+  "description": "JavaScript Interview Series with Test Driven Design (TDD)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "jest -watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlama7/JavaScriptInterviewSeries.git"
+  },
+  "keywords": [
+    "Javascript",
+    "JavaScript",
+    "ES6",
+    "Interview",
+    "InterviewSeries",
+    "Interview",
+    "Preparation",
+    "Algorithms",
+    "DataStructure",
+    "Algorithms",
+    "and",
+    "DataStructure"
+  ],
+  "author": "Ratna Lama",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rlama7/JavaScriptInterviewSeries/issues"
+  },
+  "homepage": "https://github.com/rlama7/JavaScriptInterviewSeries#readme",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  }
+}
