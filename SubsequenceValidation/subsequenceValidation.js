@@ -1,5 +1,5 @@
 /**
- * Gind whether an array is a subset/subsequence of another array
+ * Find whether an array is a subset/subsequence of another array
  *
  * Another Variant - Given two Strings, find if the first String is a subsequence of second one
  *
