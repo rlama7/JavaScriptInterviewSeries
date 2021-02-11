@@ -1,7 +1,5 @@
 /**
- * Find whether an array is a subset/subsequence of another array
- *
- * Another Variant - Given two Strings, find if the first String is a subsequence of second one
+ * Given two Strings, find if the first String is a subsequence of second one
  *
  * For Example,
  *  -consider Two Strings s1 and s2. A subsequence/subset is a sequence that can be derived from another
@@ -27,13 +25,13 @@
  *
  */
 
-const stringSubsequenceValidation = (s1, s2) => {
+const subsequenceValidation1 = (s1, s2) => {
   // find the length of each strings
   let m = s1.length;
-  console.log(`The length of ${s1} is : ${m}`);
+  // console.log(`The length of ${s1} is : ${m}`);
 
   let n = s2.length;
-  console.log(`The length of ${s2} is : ${n}`);
+  // console.log(`The length of ${s2} is : ${n}`);
 
   let j = 0;
 
@@ -47,8 +45,12 @@ const stringSubsequenceValidation = (s1, s2) => {
     }
   }
   // If all characters of s2 were found in s1 then return true/false
-  return j == n;
+  return j === n;
 };
 
-console.log(stringSubsequenceValidation('Apple', 'Ale')); // TRUE
-console.log(stringSubsequenceValidation('AlexIntheWonderland', 'xtldr')); // FALSE
+// Print out
+console.log('Apple --> Ale: ' + subsequenceValidation1('Apple', 'Ale')); // TRUE
+console.log(
+  'AlexIntheWonderland --> xtldr: ' +
+    subsequenceValidation1('AlexIntheWonderland', 'xtldr')
+); // FALSE
