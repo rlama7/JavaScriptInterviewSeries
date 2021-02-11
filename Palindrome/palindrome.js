@@ -9,21 +9,21 @@
  * abcdefg --> false
  */
 
- const palindrome = (str) => {
-     return (str.toLowerCase() === str.toLowerCase().split('').reverse().join(''));
- }
+const palindrome = (str) => {
+  return str.toLowerCase() === str.toLowerCase().split('').reverse().join('');
+};
 
- console.log(palindrome('ABa'));
- console.log(palindrome('Madam I am adam'));
+console.log(palindrome('ABa'));
+console.log(palindrome('Madam I am adam'));
 
- console.log('HELP'.toLowerCase());
+console.log('HELP'.toLowerCase());
 
+const palindrome2 = (str) => {
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1];
+  });
+};
 
- const palindrome2 = (str) => {
-     return str.split('').every((char, i) => {
-         return char === str[str.length -i -1];
-     });
- }
-
- console.log(palindrome2('hello'));
- console.log(palindrome2('abba'));
+console.log(palindrome2('hello'));
+console.log(palindrome2('abba'));
+console.log(palindrome2('atta'));
