@@ -23,29 +23,43 @@ class Node {
     this.right = null;
   } // end constructor
 
-  // insert(data)
+  /**
+   * Insert data to the node of the BST
+   * @param {*} data to be inserted at the appropriate location of BST
+   */
   insert(data) {
     if (data < this.data && this.left) {
+      // left node exists
       this.left.insert(data);
     } else if (data < this.data) {
+      // left node doesn't exist, i.e. leaf node
       this.left = new Node(data);
     } else if (data > this.data && this.right) {
+      // right node exists
       this.right.insert(data);
     } else if (data > this.data) {
+      // right node doesn't exist, i.e. leaf node
       this.right = new Node(data);
     }
   } // end insert()
 
-  // contains()
+  /**
+   * Find the data contained in the BST.
+   * If the data doesn't exist then return null.
+   * @param {*} data that is contined in the tree
+   */
   contains(data) {
     if (this.data === data) {
       return this;
     }
+    // check the right
     if (this.data < data && this.right) {
       return this.right.contains(data);
+      // check the left
     } else if (this.data > data && this.left) {
       return this.left.contains(data);
     }
+    // data doesn't exist
     return null;
   } // end contains()
 
