@@ -42,7 +42,7 @@ class BST {
  * OUTPUT: 13 is the closest value
  */
 
-let t = {
+let tree = {
   nodes: [
     { left: '5', right: '15', value: 10 },
     { left: '13', right: '22', value: 15 },
@@ -58,4 +58,4 @@ let t = {
 
 const target = 13;
 
-console.log(closestValueInBSTRecursive(t, target));
+console.log(closestValueInBSTRecursive(tree, target));
