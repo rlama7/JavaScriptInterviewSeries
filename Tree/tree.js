@@ -37,7 +37,7 @@ class Node {
    */
   remove(data) {
     // The filter() method creates a new array with all elements that pass the test implemented by the provided function.
-    this.children = this.children.filter(node => {
+    this.children = this.children.filter((node) => {
       return node.data !== data;
     });
   } // end remove()
@@ -53,7 +53,8 @@ class Tree {
   traverseBFS(fn) {
     const arr = [this.root];
     while (arr.length) {
-      // The shift() method removes the first element from an array and returns that removed element. This method /// changes the length of the array.
+      // The shift() method removes the first element from an array and returns that removed element.
+      // This method changes the length of the array.
       const node = arr.shift();
       // arr.push(...node.children)  // alternatively use ES2015 spread operator
       for (let child of node.children) {
@@ -69,7 +70,8 @@ class Tree {
     const arr = [this.root];
     while (arr.length) {
       const node = arr.shift();
-      // The unshift() method adds one or more elements to the beginning of an array and returns the new length of // the array.
+      // The unshift() method adds one or more elements to the beginning of an array and returns the new length of
+      // the array.
       arr.unshift(...node.children);
       fn(node);
     }
