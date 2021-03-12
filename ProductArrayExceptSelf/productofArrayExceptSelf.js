@@ -6,13 +6,30 @@
  *                                    output is equal to the product of all the elements of array (arr)
  *                                    except arr[i].
  *
+ * RESTRICTIONS:
+ * - solve it without division
+ * - solve it in O(n) time complexity.
+ * - Solve it with O(1) time complexity.
+ *
  * Example -
- * Input:   [5, 2,  3,  4]
- * Output: [24, 60, 40, 30]
+ * Input:   [5,   2,       3,      4]
+ * Output:  [24,   60,      40,     30]
+ *          /      |        /       |
+ *      (2*3*4)  (5*3*4)  (5*2*4)  (5*2*3)
  *
  * Time Complexity: O(n) --> Linear
- * Space Complexity: O(n) --> Linear
+ * Space Complexity: O(1) --> Constant
  */
-const productofArrayExceptSelf = (arr) => {};
+const productOfArrayExceptSelf = (arr) => {
+  // find the product
+  const product = arr.reduce((a, b) => a * b);
 
-module.exports = productofArrayExceptSelf;
+  // map over the each product and divide by the number --> 120 /[5,2,3,5]
+  return arr.map((item) => product / item);
+};
+
+const arr = [5, 2, 3, 4];
+console.log(productOfArrayExceptSelf(arr)); // [24, 60, 40, 30]
+console.log('reduce ' + arr.reduce((a, b) => a * b));
+
+module.exports = productOfArrayExceptSelf;
