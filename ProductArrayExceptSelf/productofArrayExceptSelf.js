@@ -28,8 +28,32 @@ const productOfArrayExceptSelf = (arr) => {
   return arr.map((item) => product / item);
 };
 
-const arr = [5, 2, 3, 4];
-console.log(productOfArrayExceptSelf(arr)); // [24, 60, 40, 30]
-console.log('reduce ' + arr.reduce((a, b) => a * b));
+// withou divison
+const productOfArrayExceptSelfWithoutDivison = (arr) => {
+  const length = arr.length;
+  const product = [];
 
-module.exports = productOfArrayExceptSelf;
+  let index = 1;
+  for (let i = 0; i < length; i++) {
+    product[i] = index;
+    index *= arr[i];
+  }
+
+  index = 1;
+  for (let i = length - 1; i >= 0; i--) {
+    product[i] *= index;
+    index *= arr[i];
+  }
+  return product;
+};
+
+// Display
+const arr = [5, 2, 3, 4];
+console.log('productOfArrayExceptSelf --> ' + productOfArrayExceptSelf(arr)); // [24, 60, 40, 30]
+console.log('reduce -> [5, 2, 3, 4] -> ' + arr.reduce((a, b) => a * b));
+console.log(
+  'productOfArrayExceptSelfWithouDivision --> ' +
+    productOfArrayExceptSelfWithoutDivison(arr)
+);
+
+// export { productOfArrayExceptSelf, productOfArrayExceptSelfWithoutDivison };
