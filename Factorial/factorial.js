@@ -9,11 +9,10 @@
  * Factorial of --> 1! = 1
  * Factorial of --> 5! = 5*4*3*2*1 = 120
  *
- * Time Complexity: O() -->
+ * Time Complexity: O(n!) -->
  * Space Complexity: O() -->
  */
-
-// Recursive Approach
+// Recursive Approach Without Cache
 const factorial = (num) => {
   // base case
   if (num < 0)
@@ -23,8 +22,26 @@ const factorial = (num) => {
   return num * factorial(num - 1);
 };
 
+// Recursive approach with Cache
+let cacheFactorial = (function () {
+  const cache = {};
+  fn = function (num) {
+    if (num === 0) {
+      return 1;
+    } else if (cache[num]) {
+      return cache[num];
+    }
+    return (cache[num] = num * fn(num - 1));
+  };
+  return fn;
+})();
+
 // Display
-console.log('-7! --> ' + factorial(-7));
-console.log('0! --> ' + factorial(0));
-console.log('1! --> ' + factorial(1));
+console.log('-7! --> ' + factorial(-7)); // Sorry ... message
+console.log('0! --> ' + factorial(0)); // 1
+console.log('1! --> ' + factorial(1)); // 1
 console.log('5! --> ' + factorial(5)); // 120
+
+console.log('19! (slow) --> ' + factorial(19));
+
+console.log('cacheFactorial(19) --> ' + cacheFactorial(19));
