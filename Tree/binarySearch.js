@@ -19,7 +19,14 @@
 
 /**
  * Iterative approach to the binary search
- * Time Complexity: O()
+ *
+ * Time Complexity:
+ * O(log n) ---> if given array is sorted.
+ *
+ * O(n logn) --> If the provided array is not sorted, we cannot apply Binary Search unless we sort the array
+ * first. The sorting algorithm varies and therefore the time complexity. For the following implementation I'd
+ * assume time complexity of O(n logn) for sorting.
+ *
  * Space Complexity: O(1) --> constant since no extra array is created
  *  */
 const binarySearchIterative = (arr, target) => {
@@ -50,21 +57,24 @@ const binarySearchIterative = (arr, target) => {
   }
   // if target is not found
   console.log(`Target ${target} not found in the array`);
+  return -1;
 };
 
 /**
  * recursive approach to binary search
  *
- * Time Complexity: O() -->
- * Space Complexity: O(log n) -->
+ * Time Complexity: O(log n) / O(n log n) --> same as Iterative counterpart
+ * Space Complexity: O(log n) --> Due to stack
  */
 const binarySearchRecursive = (arr, target, startIndex, endIndex) => {
   // sort the array
   arr.sort((a, b) => a - b);
 
   // base condition
-  if (startIndex > endIndex)
-    return `Target ${target} not found in the given array.`;
+  if (startIndex > endIndex) {
+    console.log(`Target ${target} not found in the given array.`);
+    return -1;
+  }
 
   // find midPoint, floor the value to only get integer value
   let midPoint = Math.floor((startIndex + endIndex) / 2);
@@ -119,13 +129,18 @@ console.log(
 console.log('\n---------------------------------------------');
 
 // Check Iterative approach
-console.log(binarySearchIterative(arr, 11)); // index 6
-console.log(binarySearchIterative(arr, 21)); // target not found message
+console.log('sorted arr --> ' + arr.sort((a, b) => a - b));
+console.log('target 11 --> ' + binarySearchIterative(arr, 11)); // index 6
+console.log('target 21 --> ' + binarySearchIterative(arr, 21)); // target not found message
 console.log('\n---------------------------------------------');
 
 // Check Recursive approach
 arr1 = [1, 7, 3, 8, 6, 15, 2, 11];
 console.log('sorted arr1 --> ' + arr1.sort((a, b) => a - b));
-console.log(binarySearchRecursive(arr1, 2, 0, arr1.length - 1)); // index 6
-console.log(binarySearchRecursive(arr1, 21, 0, arr1.length - 1)); // target not found message
+console.log(
+  'target 2 --> ' + binarySearchRecursive(arr1, 2, 0, arr1.length - 1)
+); // index 6
+console.log(
+  'target 21 --> ' + binarySearchRecursive(arr1, 21, 0, arr1.length - 1)
+); // target not found message
 console.log('\n---------------------------------------------');
