@@ -30,6 +30,8 @@
  */
 const bubbleSort = (array) => {
   const len = array.length;
+  let flag = 0;
+
   for (let i = 0; i < len; i++) {
     for (j = 0; j < len; j++) {
       if (array[j] > array[j + 1]) {
@@ -38,8 +40,13 @@ const bubbleSort = (array) => {
         let temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
+        // change flag
+        flag = 1;
       }
     }
+    // flag = 0 means we don't need to check any more
+
+    if ((flag = 0)) break;
   }
   return array;
 };
