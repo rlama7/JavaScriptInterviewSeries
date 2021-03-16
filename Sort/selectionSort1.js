@@ -10,25 +10,53 @@
  * * STEP #1
  *            /--> indexOfMin
  *           /
- *   -index->0   1   2    3     5    6
+ *   -index->0   1   2    3     4    5
  *  |
  *   -sorted-|----unsorted-------------
- *          [9,  3,  7,   2,    4,   1]  // shift the index of min from left to right when all array elements are compared swap 9 & 1
+ *          [9,  3,  7,   2,    4,   1]  // shift the index of min from left to right. When all array elements are compared swap 9 & 1
  *      -----|--------------------------
  *
  * * STEP #2
- *            /--> indexOfMin
- *           /
- *           0   1   2    3     5    6
- *   -sorted-|----unsorted-------------
- *          [9,  3,  7,   2,    4,   1]
- *      -----|--------------------------
+ *                /--> indexOfMin
+ *               /
+ *           0   1   2    3     4    5
+ *   -sorted-----|----unsorted-------------
+ *          [1,  3,  7,   2,    4,   9]      // shift the index of min from left to right. When all array elements are compared swap 2 & 3
+ *      ---------|--------------------------
  *
+ * * STEP #3
+ *                    /--> indexOfMin
+ *                   /
+ *           0   1   2    3     4    5
+ *   -sorted---------|----unsorted-------------
+ *          [1,  2,  7,   3,    4,   9]      // shift the index of min from left to right. When all array elements are compared swap 3 & 7
+ *      -------------|--------------------------
  *
+ * * STEP #4
+ *                          /--> indexOfMin
+ *                         /
+ *           0   1   2    3     4    5
+ *   -sorted--------------|----unsorted-------------
+ *          [1,  2,  3,   7,    4,   9]      // shift the index of min from left to right. When all array elements are compared swap 4 & 7
+ *      ------------------|--------------------------
  *
+ * * STEP #5
+ *                                /--> indexOfMin
+ *                               /
+ *           0   1   2    3     4    5
+ *   -sorted--------------------|----unsorted-------------
+ *          [1,  2,  3,   4,    7,   9]
+ *      ------------------------|--------------------------
+ * // shift the index of min from left to right. When all array elements are compared swap 7 & 7 no Swap needed here
  *
- *
- *
+ * STEP #6
+ *                                    /--> indexOfMin
+ *                                   /
+ *           0   1   2    3     4    5
+ *        ---sorted------------------|----unsorted-------------
+ *          [1,  2,  3,   4,    7,   9]
+ *        ---------------------------|--------------------------*
+ // shift the index of min from left to right. When all array elements are compared swap 9 & 9 no Swap needed here*
  *
  *
  * Time Complexity: O(n^2) --> Quadratic
