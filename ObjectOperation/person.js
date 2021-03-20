@@ -86,20 +86,37 @@ console.log(`average Salary --> ${averageSalary}`);
 console.log('\n-------------------------------------------------------------');
 
 /**
- * People who are above 32 return firstName & lastName
- *  */
-// let date = '10/12/3010';
-// console.log(date.split('/')[2]);
+ * People who are above age > 32 return firstName & lastName
+ *
+ */
 
-// iterate through the person object based on year of birth and find the age above 32
+// iterate through the person object's DOB property
+// convert DOB to seconds
+// collect firstName & lastname where age > 32
+const getAge = (dob) => {
+  // number of milliseconds elapsed since Jan 1 1970 00:00:00 UTC w/leap seconds ignored
+  let today = new Date();
+  let birthDate = new Date(dob);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  let month = today.getMonth() - birthDate.getMonth();
+  if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
 
+const name = person.filter((dob, index) => {
+  if (getAge(person[index].DOB) > 32)
+    return person[index].firstName + person[index].lastName;
+});
+
+console.log(name);
 console.log('\n-------------------------------------------------------------');
 // Sorted on the basis of Age (Youngest to Oldest)
 
 console.log('\n-------------------------------------------------------------');
 
 console.log('\n-------------------------------------------------------------');
-
 /**
  * Utility functions
  *
@@ -144,4 +161,37 @@ function isPrime(num) {
 }
 console.log('checkPrime: ');
 console.log(checkPrime(arr));
+
+console.log('\n-------------------------------------------------------------');
+let date1 = '10/12/2010';
+let date2 = '11/12/2010';
+let date3 = '12-12-2010';
+console.log(date1.split('/')[2]);
+// get js date format then year
+console.log('full year date3: -> ' + new Date(date3).getFullYear());
+
+console.log('new Date:');
+// parse date String
+let newDate1 = new Date(date1);
+let newDate2 = new Date(date2);
+let newDate3 = new Date(date3);
+console.log('newDate1 -> ' + newDate1.toString());
+console.log('newDate2 -> ' + newDate2.toString());
+console.log('newDate3 -> ' + newDate3.toString());
+
+// getTime() convert dates to milliseconds then convert it to seconds by dividing by 1000
+console.log('\nDate in seconds: ');
+let seconds = 1000;
+console.log('newDate1 in seconds-> ' + newDate1.getTime() / seconds);
+console.log('newDate2 in seconds-> ' + newDate2.getTime() / seconds);
+console.log('newDate3 in seconds -> ' + newDate3.getTime() / seconds);
+
+console.log('typeof newDate2 -> ' + typeof newDate2);
+
+let diff =
+  newDate1.getTime() / seconds < newDate3.getTime() / seconds
+    ? 'older'
+    : 'younger';
+console.log(`Who's older? ${diff}`);
+
 console.log('\n-------------------------------------------------------------');
