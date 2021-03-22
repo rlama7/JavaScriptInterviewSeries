@@ -11,9 +11,19 @@
 const person = {
   firstName: 'John',
   lastName: 'Doe',
-  fullName: function () {
-    return this.firstName + ' ' + this.lastName;
-  },
+  age: 20,
 };
 
-console.log(person.fullName());
+const fullName = function (a, b, c) {
+  return this.age + a + b + c;
+};
+
+// bind fullName function to person object
+const bindFullNameToPersonObj = fullName.bind(person);
+
+console.log(bindFullNameToPersonObj); // [Function: bound fullName]
+
+// execute the bindFullNameToPersonObj function () --> supply arguments since
+// this bounded fucntion will  be calling fullName() function
+
+console.log(bindFullNameToPersonObj(1, 2, 3)); // 26 --> 20+1+2+3
