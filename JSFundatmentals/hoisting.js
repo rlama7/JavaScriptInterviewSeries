@@ -2,7 +2,11 @@
  * hoisting.js      - A program to demonstrate implementation of hoisiting concept in JavaScript.
  * @author          - Ratna Lama
  * @version         - 1.0.0
- * @description     -
+ * @description     - In JavaScript, variable and function declarations are parsed by an interpreter
+ *                    as if they were declared at the top of the current scope. This process is called
+ *                    'hoisting'. It is important to note that while declarations are hoisted, variable
+ *                    assignements are not. If you assign a value to a variable before first declaringit,
+ *                    you'll have created a global variable unless operating in strict mode.
  */
 
 // Example #1
