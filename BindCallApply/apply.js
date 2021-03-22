@@ -37,6 +37,35 @@ console.log(
   'apply() applied to employee object -> ' + sum.apply(employee, num1)
 ); // 31 --> 25+1+2+3
 
+// min/max number in an array
+const numbers = [4, 9, 6, 3, 19, 11, 7];
+
+// Min Max cannot be directly applied to array
+
+// option #1 spread operator
+console.log('\n-------Finding Min/Max----OPTION#1----Using Spread Operator---');
+let min = Math.min(...numbers);
+let max = Math.max(...numbers);
+console.log(numbers);
+console.log(`Min number is: ${min}`);
+console.log(`Max number is: ${max}`);
+
+// option #2 apply
+console.log('\n-------Finding Min/Max----OPTION#2----Using APPLY()---');
+function getMaxOfArray(num) {
+  return Math.max.apply(null, num);
+}
+
+function getMinofArray(num) {
+  return Math.min.apply(null, num);
+}
+console.log(
+  'apply() applied to numbers array to find Max -> ' + getMaxOfArray(numbers)
+); // 19
+console.log(
+  'apply() applied to numbers array to find Min -> ' + getMinofArray(numbers)
+); // 3
+
 console.log('\n-------------------CALL-----------------------');
 console.log(
   'call() applied to person object -> ' + sum.call(person, 5, 10, 15)
