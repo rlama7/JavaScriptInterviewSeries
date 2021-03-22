@@ -18,7 +18,7 @@ const fullName = function (a, b, c) {
   return this.age + a + b + c;
 };
 
-// bind fullName function to person object
+// bind fullName() to person object
 const bindFullNameToPersonObj = fullName.bind(person);
 
 console.log(bindFullNameToPersonObj); // [Function: bound fullName]
