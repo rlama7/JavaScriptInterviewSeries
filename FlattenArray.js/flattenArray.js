@@ -9,6 +9,9 @@
  *
  *                        The flat() method makes use of concat() to merge two or more arrays. The concat()
  *                        method does not change the existing arrays, but instead returns a new array.
+ *
+ *                        arr.flat() is equivalent to ->
+ *                                  arr.reduce((acc, val) => acc.concat(val), [])
  */
 // const flattenArray = (array) => {};
 
@@ -48,7 +51,7 @@ const arrConcat123 = arrConcat1.concat(arrConcat2, arrConcat3);
 console.log(arrConcat1);
 console.log(arrConcat2);
 console.log(arrConcat12); // [ 'a', 'b', 'c', 'd', 'e', 'f' ]
-console.log(arrConcat123);
+console.log(arrConcat123); // ['a', 'b', 'c', 'd', 'e', 'f', 1,2,3]
 console.log('\n--------------------------------------------------');
 
 // export default flattenArray;
