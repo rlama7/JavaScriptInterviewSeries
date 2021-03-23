@@ -9,6 +9,8 @@
  *
  */
 
+const { reset } = require('nodemon');
+
 // Example - Synchronous code
 function otherFunction() {
   console.log('This is other function');
@@ -31,9 +33,12 @@ console.log('I was the second one at the line');
 console.log('\n-------------------------------------------');
 
 // Async / Await
-async function fetchUsers() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await res.json();
-  console.log(data);
-}
-fetchUsers();
+// async function fetchUsers() {
+//   const res = await setTimeout();
+//   console.log(res);
+// }
+// try {
+//   fetchUsers();
+// } catch (e) {
+//   console.log(e);
+// }
