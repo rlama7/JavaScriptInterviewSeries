@@ -1,5 +1,5 @@
 /**
- * subarraySum.js       - A progrm to find the subarrays that add to a given sum.
+ * subarraySumOfTwo.js  - A progrm to find the subarrays sum (of two adjacent elements) that add to a given sum.
  * @author              - Ratna Lama
  * @version             - 1.0.0
  * @description         -
@@ -24,7 +24,7 @@
  * Time Complexity:
  * Space Complexity:
  */
-const subArraySum = (array, target) => {
+const subArraySumOfTwo = (array, target) => {
   let left = 0;
   let right = left + 1;
   const subArray = [];
@@ -42,4 +42,4 @@ const subArraySum = (array, target) => {
 };
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(subArraySum(array, 9));
+console.log(subArraySumOfTwo(array, 9));
