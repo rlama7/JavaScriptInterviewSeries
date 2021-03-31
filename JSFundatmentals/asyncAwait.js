@@ -42,3 +42,33 @@ console.log('\n-------------------------------------------');
 // } catch (e) {
 //   console.log(e);
 // }
+
+/**
+ * Callbacks, Promises & Async/Await
+ */
+
+// imagine a fucntion like a machine(toaster machine) that takes some input (bread),
+// you press the function button then machine does its work and return the results.
+function add(x, y) {
+  return x + y;
+}
+
+const me = add; // make reference to the function add in memory
+me(1, 2); // 3 --> equivalent to me pressing the button on --> referencing the function add in memory and executing it.
+
+// JavaScript can take function as an input parameter and also return function
+function addTen(x, addReference) {
+  return addReference(10, x);
+}
+
+console.log(addTen(5, add)); // 15
+
+/**
+ * higherOrderFunction --> takes in function as an argument
+ * callBack function --> function that is passed as an argument to higherOrder function is called callback function
+ */
+function higherOrderFunction(x, callback) {
+  return callback(5, x);
+}
+
+console.log(higherOrderFunction(10, add)); // 15
