@@ -31,3 +31,21 @@ const arr = [3, 1, [6, -8], 4, [2, [-10, 8], 7]];
 console.log(productSum(arr)); // 10
 
 module.exports = productSum;
+
+// flatten array with default depth=1
+// const flattenArray = (array, depth = 1) => {
+//   // recursive case
+//   for (const element of array) {
+//     if (Array.isArray(element)) {
+//       return flattenArray(array, depth + 1);
+//     } else {
+//       // if not nested array element
+//       return array.reduce((accum, value) => accum + value);
+//     }
+//   }
+// };
+// console.log(flattenArray(arr, 1));
+
+const arr1 = [1, 2, 3, 4, 5, 6];
+const reducer = arr1.reduce((accum, value) => accum + value);
+console.log(reducer);

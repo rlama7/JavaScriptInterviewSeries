@@ -4,7 +4,8 @@
  * @version            - 1.0.0
  *
  * @description        - What is 'new' keyword in JavaScript and how is it used?
- * 'new' keyword does following thins:
+ *
+ * 'new' keyword does following things:
  * 1. It creates a new object. The type of this object is simpley object.
  * 2. It sets the new object's internal, inaccessible, [prototype], i.e. __proto__   propety to
  *    be the constructor function's external, accessible, prototype object (eveyr function/object)
