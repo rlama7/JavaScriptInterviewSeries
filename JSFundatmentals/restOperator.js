@@ -8,9 +8,7 @@
  *
  */
 const sum = (...args) => {
-  return args.reduce((previous, current) => {
-    return previous + current;
-  });
+  return args.reduce((previous, current) => previous + current);
 };
 
 // OUTPUT
@@ -22,6 +20,7 @@ console.log(sum(1, 2)); // 3
 console.log(sum(1, 2, 3)); // 6
 console.log(sum(1, 2, 3, 4, 5)); // 15
 console.log(sum(...array1)); // 15
+console.log(...array1); // 1 2 3 4 5
 
 // Find even
 const even = (...args) => {
