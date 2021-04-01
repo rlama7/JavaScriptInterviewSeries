@@ -80,6 +80,11 @@ console.log('First attempt: ');
 console.log(sortedSquaredArray(array)); // [1,  4,  9, 16, 25, 36, 49]
 console.log('\n--------------------------------------------------------');
 
+/**
+ * OPTIMAL squared array solution
+ * @param {*} array array to be squared and sorted
+ * O(n) Time Complexity/Space Complexity
+ */
 const sortedSquareArrayOptimal = (array) => {
   const sortedOptimalArray = [];
   const len = array.length;
@@ -87,7 +92,8 @@ const sortedSquareArrayOptimal = (array) => {
   let rightPointer = len - 1;
 
   for (let i = len - 1; i > 0; i--) {
-    // compare the absolute value of left pointer to the right pointer
+    // compare the absolute value of array element @left pointer to the right pointer,
+    // i.e. array[leftPointer] > array[rightPointer] ?
     // if the left is greater than right,
     // square the left array element and insert it
     // decrement the right pointer
