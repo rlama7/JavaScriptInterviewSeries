@@ -7,9 +7,7 @@
  *                     represent variadic fucntions, i.e., one which accepts a variable number of arguments in JavaScript.
  *
  */
-const sum = (...args) => {
-  return args.reduce((previous, current) => previous + current);
-};
+const sum = (...args) => args.reduce((previous, current) => previous + current);
 
 // OUTPUT
 const array1 = [1, 2, 3, 4, 5];
