@@ -73,4 +73,4 @@ const maxSumSubArray = (array, size) => {
 const array = [1, 2, 3, 4, -1, 2];
 const size = 2;
 
-console.log(maxSumSubArray(array, size));
+console.log(maxSumSubArray(array, size)); // 7

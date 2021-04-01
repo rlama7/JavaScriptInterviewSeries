@@ -7,11 +7,7 @@
  *                     represent variadic fucntions, i.e., one which accepts a variable number of arguments in JavaScript.
  *
  */
-const sum = (...args) => {
-  return args.reduce((previous, current) => {
-    return previous + current;
-  });
-};
+const sum = (...args) => args.reduce((previous, current) => previous + current);
 
 // OUTPUT
 const array1 = [1, 2, 3, 4, 5];
@@ -22,6 +18,7 @@ console.log(sum(1, 2)); // 3
 console.log(sum(1, 2, 3)); // 6
 console.log(sum(1, 2, 3, 4, 5)); // 15
 console.log(sum(...array1)); // 15
+console.log(...array1); // 1 2 3 4 5
 
 // Find even
 const even = (...args) => {
