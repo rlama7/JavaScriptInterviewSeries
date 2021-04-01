@@ -24,8 +24,8 @@
  *
  * Algorithm -
  *
- * Time Complexity: O()
- * Space Complexity: O()
+ * Time Complexity: O(n^2) --> quadratic
+ * Space Complexity: O(n) --> linear
  */
 const sum = (...args) => args.reduce((accum, value) => accum + value);
 
