@@ -27,12 +27,13 @@ const monotonicArray = (array) => {
     let previous = array[index - 1];
 
     if (current < previous) {
-      isNonDecreasing = false; // [-1, -2, -3, -4, -5] -> NOT increasing
+      //                              previous     current
+      isNonDecreasing = false; // [   -1,          -2,     -3, -4, -5] --> NOT increasing (DECREASING)
     }
 
     if (current > previous) {
       //   previous    curent
-      isNonIncreasing = false; // [   1,          2,      3,4,5] --> NOT Decreasing
+      isNonIncreasing = false; // [   1,          2,      3,4,5] --> NOT Decreasing (INCREASING)
     }
   }
   return isNonDecreasing || isNonIncreasing;
