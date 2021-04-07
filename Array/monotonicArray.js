@@ -7,27 +7,32 @@
  *                      An empty array and arrays of one element are monotonic
  *
  * Example -
- *
- * Algorithm -
  *      INPUT:
  *          array = [1,1,2,3,4,5,5,7,9,10]
  *      OUTPUT:
  *          true
  *
- * Time Complexity: O() -->
- * Space Complexity: O() -->
+ * Algorithm -
+ *
+ *
+ * Time Complexity: O(n) --> linear
+ * Space Complexity: O(1) --> constant
  */
 const monotonicArray = (array) => {
-  let isNonDecreasing = true;
-  let isNonIncreasing = true;
+  let isNonDecreasing = true; // increasing
+  let isNonIncreasing = true; // decreasing
 
   for (let index = 1; index < array.length; index++) {
-    if (array[index] < array[index - 1]) {
-      isNonDecreasing = false;
+    let current = array[index];
+    let previous = array[index - 1];
+
+    if (current < previous) {
+      isNonDecreasing = false; // [-1, -2, -3, -4, -5] -> NOT increasing
     }
 
-    if (array[index] > array[index - 1]) {
-      isNonIncreasing = false;
+    if (current > previous) {
+      //   previous    curent
+      isNonIncreasing = false; // [   1,          2,      3,4,5] --> NOT Decreasing
     }
   }
   return isNonDecreasing || isNonIncreasing;
