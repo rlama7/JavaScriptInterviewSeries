@@ -88,28 +88,40 @@ console.log('\n--------------------------------------------------------');
 const sortedSquareArrayOptimal = (array) => {
   const sortedOptimalArray = [];
   const len = array.length;
-  let leftPointer = 0;
-  let rightPointer = len - 1;
 
-  for (let i = len - 1; i > 0; i--) {
+  for (let index = len - 1; index > 0; index--) {
     // compare the absolute value of array element @left pointer to the right pointer,
     // i.e. array[leftPointer] > array[rightPointer] ?
     // if the left is greater than right,
     // square the left array element and insert it
     // decrement the right pointer
+    let left = 0;
+    let right = len - 1;
     if (Math.abs(array[left]) > array[right]) {
-      sortedOptimalArray[i] = array[left] * [array[left]];
-      leftPointer++;
+      sortedOptimalArray[index] = array[left] * array[left];
+      left++;
     } else {
-      sortedOptimalArray[i] = array[rightPointer] * array[rightPointer];
+      sortedOptimalArray[index] = array[right] * array[right];
       right--;
     }
   }
   return sortedOptimalArray;
 };
 
+const array1 = [-9, -5, -2, -1, 3, 5, 6];
+const array2 = [-7, -5, -2, -1, 3];
+const array3 = [-2, -1, 3, 4, 6];
+const array4 = [];
+const array5 = [-7, -5];
+
 console.log('optimal sorted array: ');
 console.log(sortedSquaredArray(array));
+
+console.log(sortedSquaredArray(array1)); // [1,  4,  9, 25,25, 36, 81]
+console.log(sortedSquaredArray(array2)); // [ 1, 4, 9, 25, 49 ]
+console.log(sortedSquaredArray(array3)); // [ 1, 4, 9, 16, 36 ]
+console.log(sortedSquaredArray(array4)); // []
+console.log(sortedSquaredArray(array5)); // [25,49]
 
 console.log('\n--------------------------------------------------------');
 

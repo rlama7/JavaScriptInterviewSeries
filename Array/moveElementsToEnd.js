@@ -12,8 +12,8 @@
  *              array = []
  * Algorithm -
  *
- * Time Complexity: O() -->
- * Space Commplexity: O() -->
+ * Time Complexity: O(n) --> linear
+ * Space Commplexity: O(1) --> constant
  */
 
 const moveElementsToEnd = (array, target) => {
