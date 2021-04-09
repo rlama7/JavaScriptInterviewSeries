@@ -203,8 +203,90 @@ let {
   winter: rainySeason,
 } = seasons;
 
+console.log(favSeason); // ['March', 'April', 'May'];
+
 console.log(`My favorite months are: ${favSeason}. 
 Hot months are: ${hotSeason}. 
 Cold months are: ${coldSeason}. 
 Rainy months are: ${rainySeason} `);
-console.log('\n---------');
+
+/**
+ * My favorite months are: March,April,May.
+ * Hot months are: June,July,August.
+ * Cold months are: September,October,Nember.
+ * Rainy months are: December,January,February
+ */
+
+console.log('\n------Nesting in Object Destructuring------');
+
+const apple = {
+  product: 'iphone',
+  manufacturer: 'Apple Inc',
+  place: {
+    country: 'USA',
+    state: 'California',
+    city: 'Cupertino',
+  },
+  otherProducts: ['Mac Book Pro', 'ipod', 'itune', 'ipad'],
+};
+
+console.log(
+  `${apple.product} is designed by ${apple.manufacturer} at ${apple.place.city}, ${apple.place.state}.`
+);
+// iphone is designed by Apple Inc at Cupertino, California.
+
+let {
+  product: iphone,
+  manufacturer: appleInc,
+  place: { country: countryCode, state: stateCode, city: cityCode },
+  otherProducts,
+} = apple;
+
+console.log(
+  `${iphone} is designed by ${appleInc} in ${stateCode}. Other products are: ${otherProducts}.`
+);
+// iphone is designed by Apple Inc in California.
+// Other products are: Mac Book Pro,ipod,itune,ipad.
+
+console.log('\n------Rest in Object Destructuring---------');
+
+// The rest syntax can also be used to pick up property keys that are not already
+// picked up by the destructuring pattern. Those keys and their values are copied
+// into a new object:
+
+const friends = {
+  friendName: 'Taylor Swift',
+  location: 'Hollywood',
+  work: 'singer/song writer',
+  friends: ['Salena', 'Katie', 'Kim', 'Tina'],
+};
+
+let { friendName, work, ...otherList } = friends;
+
+console.log(`${friendName} is a ${work}.`); // Taylor Swift is a singer/song writer.
+console.log(otherList);
+
+/** 
+ * otherList contains the remaining properties from the friends object. otherList variable 
+ * could be renamed to any variable of desired name.
+ * 
+ * {
+    location: 'Hollywood',
+    friends: [ 'Salena', 'Katie', 'Kim', 'Tina' ]
+  }
+ * */
+
+console.log('\n------Object Destructuring and Functions---');
+
+// Object Destructuring can be used to assing parameters to functions:
+
+function toy({
+  toyName: nickName = 'Drone',
+  toyColor: paint = 'red and white',
+} = {}) {
+  console.log(`${nickName} is my favorite toy in ${paint} color.`);
+}
+
+toy(); // Drone is my favorite toy in red and white color.
+// on line 286 --> {} on the Right Hand Side (RHS) makes it possible
+// for us to call the function toy without passing any arguments.
