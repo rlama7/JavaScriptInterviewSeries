@@ -187,4 +187,24 @@ let {
 
 console.log(`\n${nation} speaks ${language} at ${capitolBldg}`); // USA speaks English at Washington D.C.
 
+console.log('\n------Combining Arrays with Objects------');
+
+let seasons = {
+  spring: ['March', 'April', 'May'],
+  summer: ['June', 'July', 'August'],
+  fall: ['September', 'October', 'Nember'],
+  winter: ['December', 'January', 'February'],
+};
+
+let {
+  spring: favSeason,
+  summer: hotSeason,
+  fall: coldSeason,
+  winter: rainySeason,
+} = seasons;
+
+console.log(`My favorite months are: ${favSeason}. 
+Hot months are: ${hotSeason}. 
+Cold months are: ${coldSeason}. 
+Rainy months are: ${rainySeason} `);
 console.log('\n---------');
