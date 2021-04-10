@@ -52,7 +52,7 @@ function matrixSpiral(num) {
     // bottom row
     for (let i = endCol; i >= startCol; i--) {
       results[endRow][i] = counter;
-      counter;
+      counter++;
     }
     endRow--;
 
