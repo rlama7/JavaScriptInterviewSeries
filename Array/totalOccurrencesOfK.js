@@ -1,12 +1,12 @@
 /**
- * kSortArray.js    - A program to find total occurences of K in a sorted array.
- * @author          - Ratna Lama
- * @version         - 1.0.0
- * @description     -
+ * totalOccurrencesOfK.js - A program to find total occurences of K in a sorted array.
+ * @author                - Ratna Lama
+ * @version               - 1.0.0
+ * @description           -
  *
  * Example -
  *      INPUT:
- *          array = [1,5,9,11,13,19,21,29]    | target = 9
+ *          array = [1, 1, 1, 1, 1, 5, 9, 11, 13, 19, 21, 29]   | target = 1
  *      OUTPUT:
  *
  * Algorithm -
@@ -16,6 +16,18 @@
  * Space Complexity: O(1) --> constant
  *
  */
+console.log(
+  '\n---------------BEGIN ENUM CLASS for Search Type--------------------------------'
+);
+const SearchType = Object.freeze({
+  FIRST: 'first',
+  LAST: 'last',
+});
+
+// Object.freeze(enumClass) // prevent from assigning undesired value to the Enum Class
+let searchFirst = SearchType.FIRST;
+let searchLast = SearchType.LAST;
+console.log(searchFirst, searchLast);
 
 console.log(
   '\n---------------BEGIN Recursive BS----------------------------------------------'
@@ -29,7 +41,14 @@ console.log(
  * @param {*} left starting index (inclusive) of the array to be searched for the target element
  * @param {*} right ending index (inclusive) of the array to be searched for the target element
  */
-const binarySearchRecursive = (array, target, left, right) => {
+
+const isInBounds = (array, randomIndex) => {
+  if (randomIndex >= 0 || randomIndex <= array.length - 1) {
+    return true;
+  }
+  return false;
+};
+const binarySearchRecursive = (array, target, left, right, searchType) => {
   // base case
   if (array.length === 0 || left > right) return false;
 
@@ -38,7 +57,29 @@ const binarySearchRecursive = (array, target, left, right) => {
   let midPoint = Math.floor(left + (right - left) / 2);
 
   if (target === array[midPoint]) {
-    // we've found the target so return the index of the target element
+    // we've found the target so let's check for the search type first or last index
+    if (searchType === SearchType.FIRST) {
+      if (
+        isInBounds(array, midPoint - 1) &&
+        array[midPoint] === array[midPoint - 1]
+      ) {
+        return binarySearchRecursive(
+          array,
+          target,
+          left,
+          midPoint - 1,
+          searchLeft
+        );
+      }
+    } else if (searchType === SearchType.LAST) {
+      if (
+        isInBounds(array, midPoint + 1) &&
+        array[midPoint] === array[midPoint + 1]
+      ) {
+        return binarySearchRecursive(array, target, midPoint + 1, right);
+      }
+    }
+    // finally return the index based on search type
     return midPoint;
   } else if (target < array[midPoint]) {
     // search the left half of the array
@@ -71,7 +112,8 @@ console.log(
  * @param {*} array input sorted array to be searched for a target item
  * @param {*} target array element to be searched in a sorted array
  */
-const binarySearchIterative = (array, target) => {
+
+const binarySearchIterative = (array, target, searchType) => {
   // check the empty array case
   if (array.length === 0) return false;
 
@@ -141,15 +183,30 @@ console.log(
     array.length - 1
   )}` //Index of target1: 1 is 0
 );
+console.log(
+  '\n-------------BEGIN kSortArray BS Recursive---------------------------------------'
+);
 
+console.log(array);
+console.log(target1);
 const kSortArray = (array, target) => {
-  const kOccurences = [];
-  let left, right;
-  let leftBound = 0,
-    rightBound = array.length - 1;
+  const firstKItem = binarySearchRecursive(
+    array,
+    target,
+    0,
+    array.length - 1,
+    SearchType.FIRST
+  );
 
-  const firstKItem = binarySearchIterative(array, target);
-  const lastKItem = binarySearchIterative(array, target);
+  if (firstKItem == false) return;
+
+  const lastKItem = binarySearchRecursive(
+    array,
+    target,
+    0,
+    array.length - 1,
+    SearchType.LAST
+  );
 
   return lastKItem - firstKItem + 1;
 };
