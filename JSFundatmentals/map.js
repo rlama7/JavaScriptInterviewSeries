@@ -64,4 +64,17 @@ const person = [
   },
 ];
 
-// person.map((item, index) => )
+const getCorrectAge = (dob) =>
+  Math.floor((new Date() - new Date(dob).getTime()) / 3.15576e10);
+
+console.log(getCorrectAge('09/23/1982'));
+
+// find person greater than age 32
+const getPersonAgeGreaterThan32 = (person) =>
+  person.filter((personItem, index) => {
+    if (getCorrectAge(person[index].DOB) > 32) {
+      return personItem;
+    }
+  });
+
+console.log(getPersonAgeGreaterThan32(person));
