@@ -63,3 +63,5 @@ const person = [
     salary: '60000',
   },
 ];
+
+// person.map((item, index) => )

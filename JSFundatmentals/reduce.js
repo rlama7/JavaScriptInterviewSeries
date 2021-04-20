@@ -63,3 +63,23 @@ const person = [
     salary: '60000',
   },
 ];
+
+/**
+ * find average salary
+ *
+ * ---Algorithm---
+ * 1. map throught the person object and grab salary property
+ * 2. parse string salary to int
+ * 3. apply reduce to get the sum of salary
+ * 4. divide the total sum of the salary by person object's length
+ */
+
+const getAverageSalary = (person) => {
+  return (
+    person
+      .map((item, index) => parseInt(person[index].salary))
+      .reduce((accumulator, value) => accumulator + value) / person.length
+  );
+};
+
+console.log(getAverageSalary(person)); // 51,251.5
