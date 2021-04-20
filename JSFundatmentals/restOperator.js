@@ -37,8 +37,13 @@ console.log(odd(...array2)); // [ 1, 3, 5, 7, 9 ]
 const isPrime = (num) => {
   if (num < 2) return num;
 
+  // check even
   if (num % 2 === 0) return false;
 
+  // check square root of odd numbers such as divisible by such
+  // 3 <- 3x3
+  // 5 <- 5x5
+  //
   for (let i = 3; i <= Math.sqrt(num); i += 2) {
     if (num % i === 0) return false;
   }
