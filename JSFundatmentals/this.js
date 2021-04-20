@@ -111,9 +111,9 @@ const languages = ['JavaScript', 'Java', 'Python'];
 
 // call()
 console.log('\n----------------------call()-------------------------------');
-greet.call(boss, languages[0], languages[1], languages[2]); // Greeting! Ray Love. I can speak  JavaScript, Java, and Python.
+greet.call(boss, languages[0], languages[1], languages[2]); // Greeting! Ray Love I can speak  JavaScript, Java, and Python.
 
-greet.call(employee, languages[0], languages[1], languages[2]); // Greeting! Ashley. Bradford I can speak  JavaScript, Java, and Python.
+greet.call(employee, languages[0], languages[1], languages[2]); // Greeting! Ashley Bradford I can speak  JavaScript, Java, and Python.
 
 // apply()
 console.log('\n----------------------apply()-------------------------------');
@@ -160,6 +160,9 @@ const Animal = function (animalName, type, color) {
 
 const zebra = new Animal('Zuba', 'Zebra', 'black and white');
 console.log(zebra);
+/**
+ * Animal { animalName: 'Zuba', type: 'Zebra', color: 'black and white' }
+ * */
 
 console.log(
   '\n----------------------window Binding()-------------------------------'
@@ -167,6 +170,7 @@ console.log(
 /**
  *
  */
+
 const getAge = function () {
   console.log(this.age);
 };
@@ -175,6 +179,6 @@ const me = {
   age: 25,
 };
 
-getAge(); // undefined
-window.age = 21;
-getAge();
+getAge(); // undefined <-- this
+age = 21;
+getAge(); // 21
