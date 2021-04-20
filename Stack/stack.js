@@ -38,13 +38,21 @@ class Stack {
 }
 
 s = new Stack();
-s.push("apple");
+s.push('apple');
 s.push(1);
-s.push("a");
-console.log(s);
+s.push('a');
+
+console.log(s); // Stack { data: [ 'apple', 1, 'a' ] }
+
 s.pop();
-console.log(s);
-console.log(s.peek());
+
+console.log(s); // // Stack { data: [ 'apple', 1 ] }
+
+console.log(s.peek()); // 1
+
+console.log(s.isEmpty()); // false
+
+s.pop();
 
 console.log(s.isEmpty());
 
