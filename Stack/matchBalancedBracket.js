@@ -9,25 +9,32 @@ const matchBalancedBracket = (inputString) => {
   // closing brackets have odd indexes (1,3,5,7)
   let matchedBrackets = '[]{}()<>';
 
+  // brackets --------> [  ]  {   }  (   )   <   >
+  // index -----------> 0  1  2   3  4   5   6   7
+  // open brackets ---> 0     2      4       6
+  // close brackets -->    1      3      5       7
+
   let stack = [];
 
   for (let bracket of inputString) {
-    let openingBracketsIndex = matchedBrackets.indexOf(bracket);
+    let bracketsIndex = matchedBrackets.indexOf(bracket);
 
     // if the bracket is an opening bracket i.e. with index=even
     // then push to the stack the index of the closing bracket which
     // is one more index than the opening bracket's index
-    // !----
+    // !---- IMPORTANT ---!
     // the closing brackets is pushed onto the stack and the NOT The actual closing bracket itself.
     // stack.push(bracketsIndex + 1);
-    if (openingBracketsIndex % 2 === 0) {
-      stack.push(openingBracketsIndex + 1);
+    if (bracketsIndex % 2 === 0) {
+      stack.push(bracketsIndex + 1);
     } else {
-      if (stack.pop() !== openingBracketsIndex) return false;
+      if (stack.pop() !== bracketsIndex) return false;
     }
   }
 
   // if all matches and balances out then stack should be empty
+  // so returns true else false
+  // equivalent to return stack.length === 0 ? true : false
   return stack.length === 0;
 };
 
