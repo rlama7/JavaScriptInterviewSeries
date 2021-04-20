@@ -227,7 +227,7 @@ console.log(
  *                 : O(1) if used heapsort
  */
 
-const towSumSortWalkInward = (arr, k) => {
+const twoSumSortWalkInward = (arr, k) => {
   // sort the array
   arr.sort((a, b) => a - b);
 
@@ -247,5 +247,5 @@ const towSumSortWalkInward = (arr, k) => {
 const arrW = [9, 0, -5, 8, 1, 7, 3];
 console.log(`Unsorted array is ${arrW}`);
 
-console.log(towSumSortWalkInward(arrW, 16));
-console.log(towSumSortWalkInward(arrW, 25));
+console.log(twoSumSortWalkInward(arrW, 16));
+console.log(twoSumSortWalkInward(arrW, 25));

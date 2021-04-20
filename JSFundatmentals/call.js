@@ -26,7 +26,7 @@ const num = {
 };
 
 // function #1
-function fullName(firstName, lastName) {
+function fullName() {
   return this.firstName + ' ' + this.lastName;
 }
 
@@ -35,7 +35,8 @@ let sum = function (a, b, c) {
   return this.x + a + b + c;
 };
 
-console.log(fullName.call(person, person.firstName, person.lastName));
-console.log('call() applied to person object -> ' + sum.call(person, 1, 2, 3));
+console.log(fullName.call(person)); // // John Doe
+console.log('call() applied to person object -> ' + sum.call(person, 1, 2, 3)); // 26
 console.log('----------------------------------------------------');
-console.log('call () applied to num object --> ' + sum.call(num, 1, 2, 3));
+console.log('call () applied to num object --> ' + sum.call(num, 1, 2, 3)); // 16
+console.log(fullName.call(person)); // John Doe

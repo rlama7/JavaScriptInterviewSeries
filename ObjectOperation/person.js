@@ -189,6 +189,7 @@ console.log(uniqueArr);
 const filterDuplicates = (array) =>
   array.filter((item, index) => array.indexOf(item) === index);
 
+console.log('arr: ' + arr);
 console.log('remove duplicates using filter: ');
 console.log(filterDuplicates(arr));
 
@@ -201,8 +202,10 @@ function isPrime(num) {
   }
   return num > 1;
 }
+const array01 = [13, 4, 5, 615, 13, 17, 19, 38, 64, 81];
+console.log('array01 ' + array01);
 console.log('checkPrime: ');
-console.log(checkPrime(arr));
+console.log(checkPrime(array01));
 
 console.log('\n-------------------------------------------------------------');
 let date1 = '10/12/2010';
