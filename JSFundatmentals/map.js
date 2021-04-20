@@ -64,6 +64,11 @@ const person = [
   },
 ];
 
+/**
+ * Find proper age and then filter out persons that are above 32 years old
+ * @param {*} dob
+ */
+console.log('\n------Filter by AGE------------------------------');
 const getCorrectAge = (dob) =>
   Math.floor((new Date() - new Date(dob).getTime()) / 3.15576e10);
 
@@ -78,3 +83,28 @@ const getPersonAgeGreaterThan32 = (person) =>
   });
 
 console.log(getPersonAgeGreaterThan32(person));
+
+console.log('\n------Filter by SALARY------------------------------');
+// filter persons by salary greater than 55,000
+const getPersonWithSalaryGreaterThan55K = (person, targetSalary) =>
+  person.filter((personItem, index) => {
+    if (parseInt(person[index].salary) > targetSalary) {
+      return personItem;
+    }
+  });
+
+console.log(getPersonWithSalaryGreaterThan55K(person, 55000));
+
+console.log('\n------Sort by SALARY------------------------------');
+
+const sortBySalary = (person) =>
+  person.sort((a, b) => parseInt(a.salary) - parseInt(b.salary));
+
+console.log(sortBySalary(person));
+
+console.log('\n------Sort by LastName------------------------------');
+
+const sortByFirstName = (person) =>
+  person.sort((a, b) => a.firstName - b.firstName);
+
+console.log(sortByFirstName(person));
