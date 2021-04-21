@@ -12,11 +12,12 @@
   display: grid;
   gap: 3px;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 40px auto 40px;
+  grid-template-rows: 80px auto 40px;
   grid-template-areas:
-    'h h h h h h h h h h h h'
-    'm c c c c c c c c c c c'
-    'f f f f f f f f f f f f';
+    '. h h h h h h h h h h .'
+    'm c c c c c c c c c c .'
+    '. f f f f f f f f f f .';
+  /* dot represents the empty cell. Also we also need to have a complete rectangle in place*/
 
   /* other properties */
   height: 100vh;
@@ -24,6 +25,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   text-align: center;
+  position: relative;
 }
 
 .header {
@@ -45,6 +47,7 @@
   grid-area: c;
   /* other properties */
   background: lightseagreen;
+  text-align: center;
 }
 
 .footer {
