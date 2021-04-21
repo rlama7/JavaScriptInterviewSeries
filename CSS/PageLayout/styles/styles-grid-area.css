@@ -1,0 +1,55 @@
+/* reset browser defaults*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.container {
+  /* Main container wrapper*/
+
+  /* GRID properties*/
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px auto 40px;
+  grid-template-areas:
+    'h h h h h h h h h h h h'
+    'm c c c c c c c c c c c'
+    'f f f f f f f f f f f f';
+
+  /* other properties */
+  height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header {
+  /* GRID properties*/
+  grid-area: h;
+  /* other properties */
+  background: lightseagreen;
+}
+
+.menu {
+  /* GRID properties*/
+  grid-area: m;
+  /* other properties */
+  background: lightcoral;
+}
+
+.content {
+  /* GRID properties*/
+  grid-area: c;
+  /* other properties */
+  background: lightseagreen;
+}
+
+.footer {
+  /* GRID properties*/
+  grid-area: f;
+  /* other properties */
+  background: orange;
+}

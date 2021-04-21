@@ -26,6 +26,7 @@
   /*
   * apply other CSS properties to all the children of container
   */
+  height: 100%;
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2rem;
