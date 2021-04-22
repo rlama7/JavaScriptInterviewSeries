@@ -1,0 +1,39 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  /* main container*/
+  /*Grid Properties*/
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(100px, 1fr)
+  ); /* autofil Column with each cell of 100px minimum and max 1fr */
+  grid-template-rows: repeat(2, 100px); /* 2 Rows cell each 100px */
+
+  /*Other CSS properties*/
+  height: 100vh;
+  font-family: Roboto, Oxygen;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  margin: auto;
+  padding: auto;
+}
+
+.container > div:nth-child(odd) {
+  /*Grid Properties*/
+  /*Other CSS properties*/
+  background: lightseagreen;
+}
+
+.container > div:nth-child(even) {
+  /*Grid Properties*/
+  /*Other CSS properties*/
+  background: lightcoral;
+}

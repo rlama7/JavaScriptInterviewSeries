@@ -12,19 +12,9 @@
   display: grid;
   gap: 2px;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 80px auto 80px;
-  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template-rows: 50px auto 50px;
   grid-template-areas:
     'h h h h h h h h h h h h'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
-    'm m c c c c c c c c s s'
     'm m c c c c c c c c s s'
     'f f f f f f f f f f f f';
   /* dot represents the empty cell. Also we also need to have a complete rectangle in place*/
