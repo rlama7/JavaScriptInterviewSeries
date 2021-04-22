@@ -22,5 +22,5 @@ class Arithmetic {
   }
 }
 
-calc = new Arithmetic();
+const calc = new Arithmetic();
 console.log(calc.add(3, 2).sub(1).mul(3).end()); // 12
