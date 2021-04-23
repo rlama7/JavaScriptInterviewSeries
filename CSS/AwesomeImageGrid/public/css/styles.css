@@ -5,6 +5,47 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: red;
+.container {
+  /* Main Container */
+
+  /* Grid Properties*/
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 75px;
+  /* CSS Properties */
+  background: lightsalmon;
+}
+
+.horizontal {
+  /* Grid Properties*/
+  /* column cell span upto max of 2 cells */
+  grid-column: span 2;
+
+  /* 
+  * <! Super Important--->
+  * one of the power of CSS grid is the source order independence, i.e.
+  * regardless of the HTML element is ordered, we can independently style
+  * each HTML elements which gives developer a lot of Flexibility.
+  * 
+  * fill the missing gap in the grid either by row or by dense packing algorithm
+  */
+  /* grid-auto-flow: row; */
+  grid-auto-flow: dense;
+
+  /* CSS Properties */
+}
+
+.vertical {
+  /* Grid Properties*/
+  grid-row: span 2;
+
+  /* CSS Properties */
+}
+
+.big {
+  /* Grid Properties*/
+  grid-column: span 2;
+  grid-row: span 2;
+  /* CSS Properties */
 }
