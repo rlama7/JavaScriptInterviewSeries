@@ -1,0 +1,70 @@
+/* reset browser defaults*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.container {
+  /* Main container wrapper*/
+
+  /* GRID properties*/
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  grid-template-areas:
+    'h h h h h h h h h h h h'
+    'm m c c c c c c c c s s'
+    'f f f f f f f f f f f f';
+  /* dot represents the empty cell. Also we also need to have a complete rectangle in place*/
+
+  /* other properties */
+  height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+
+.header {
+  /* GRID properties*/
+  grid-area: h;
+  /* other properties */
+  background: lightseagreen;
+}
+
+.menu {
+  /* GRID properties*/
+  grid-area: m;
+  /* other properties */
+  background: lightcoral;
+}
+
+.sidebar {
+  /* GRID properties*/
+  grid-area: s;
+  /* other properties */
+  background: lightcoral;
+}
+
+.content {
+  /* GRID properties*/
+  grid-area: c;
+  /* other properties */
+  background: lightseagreen;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.footer {
+  /* GRID properties*/
+  grid-area: f;
+  /* other properties */
+  background: orange;
+}

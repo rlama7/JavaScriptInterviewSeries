@@ -1,0 +1,78 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* 
+  * for responsive and optimal case it's always best to 
+  * divide availabe grid spaces into 12 individual spaces 
+  * then apply necessary css properties to them
+  *
+  * In the following case we divided main container into 12 column spaces
+  * while each space occupying 1fr unit of space (Preferably fr over pixel or percentage) 
+  * so that we get the best responsiveness with our design.
+  * pixel format is absolute fixed,
+  * whereas fr unit scales with the available screen size
+  * 
+  */
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px 200px 40px;
+
+  /*
+  * apply other CSS properties to all the children of container
+  */
+  height: 100%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+}
+
+.header {
+  /* using line ref start at column line 1 and span till column line 3*/
+  /* grid-column-start: 1;  */
+  /* grid-column-end: 3; */
+
+  /* 
+  * shorter version
+  * equivalent to saying column span from first till third
+  */
+  /* grid-column: 1/3; */
+
+  /*
+  * when we don't know the total column information 
+  * we can use following:
+  * start from 2 line column to the end of the column lin
+  */
+  grid-column: 2 / -1;
+  background: lightseagreen;
+}
+
+.menu {
+  grid-row: 1/4;
+  background: coral;
+}
+
+.content {
+  /* 
+  * we want to provide optimal space for content 
+  * therefore extend the content space from say 2nd line column 
+  * till the last column.
+  * Since we don't know/and want to explicitly calculate the total available
+  * column, we can use -1 to specify the last column space.
+  */
+  grid-column: 2 / -1;
+  background: lightseagreen;
+}
+
+.footer {
+  /* span grid column from first till the end of the column available*/
+  grid-column: 2 / -1;
+  background: orange;
+}
