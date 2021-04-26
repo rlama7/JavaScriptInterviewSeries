@@ -1,0 +1,60 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* Grid Properties */
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(2, 100px);
+
+  /* Other CSS Properties */
+  height: 100vh;
+  background: whitesmoke;
+  border: 5px solid gold;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  /* 
+  * justify-content:
+  * aligns content along the ROW 
+  * defaults to start value
+  * other options - center and end 
+  */
+  justify-content: center;
+
+  /* 
+  * other options for justify-content 
+  * justify-content: space-between;
+  * justify-content: space-around:
+  * justify-content: space-evenly;
+  */
+
+  /* 
+  * align-content:
+  * aligns content along the COLUMN 
+  * defaults to start value
+  * other options - center and end 
+  */
+  align-content: center;
+}
+
+.container > div:nth-child(even) {
+  /* Grid Properties */
+
+  /* Other CSS Properties */
+  background: lightseagreen;
+}
+
+.container > div:nth-child(odd) {
+  /* Grid Properties */
+
+  /* Other CSS Properties */
+  background: lightcoral;
+}
