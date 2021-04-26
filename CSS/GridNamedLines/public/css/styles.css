@@ -1,0 +1,32 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* Main Container*/
+
+  /* Grid Properties */
+
+  /* CSS Other Properties */
+}
+
+.header {
+  /* Grid Properties */
+
+  /* CSS Other Properties */
+}
+
+.menu {
+  /* Grid Properties */
+
+  /* CSS Other Properties */
+}
+
+.footer {
+  /* Grid Properties */
+
+  /* CSS Other Properties */
+}
