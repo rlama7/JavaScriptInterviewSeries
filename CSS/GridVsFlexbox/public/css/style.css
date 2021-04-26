@@ -7,37 +7,51 @@
 
 /* General Settings */
 body {
-  height: 100vh;
+  height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   font-weight: 500;
   color: #fff;
   background: burlywood;
-  margin: auto;
+  /* margin: auto; */
   padding: 30px;
   text-align: center;
 }
 
 /* Flexbox Header */
 .flexbox-header {
-  /* display: inline-block */
+  display: flex;
+  justify-content: space-between;
   background: lightseagreen;
+}
+
+.flexbox-header > div:nth-child(3) {
+  margin-left: auto;
 }
 
 /* Grid Page*/
 .grid-page {
   display: grid;
   gap: 3px;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-rows: 80px auto 80px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 80px 500px 80px;
 }
 
 .header {
   grid-column: 1 / -1;
+  display: flex;
   background: lightseagreen;
 }
 
+.header > div:nth-child(3) {
+  margin-left: auto;
+}
+.header > div:nth-child(even) {
+  margin: 0 30px;
+}
+
 .menu {
+  grid-column: 1 / 2;
   background: lightcoral;
 }
 
