@@ -1,0 +1,55 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* CSS GRID properties */
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 40px auto 40px;
+
+  /* Other CSS properties */
+  height: 100vh;
+  background: gold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.header {
+  /* CSS GRID properties */
+  grid-column: 1 / -1;
+
+  /* Other CSS properties */
+  background: lightseagreen;
+}
+
+.menu {
+  /* CSS GRID properties */
+  grid-column: 1 / 4;
+
+  /* Other CSS properties */
+  background: maroon;
+}
+
+.content {
+  /* CSS GRID properties */
+  grid-column: 4 / -1;
+
+  /* Other CSS properties */
+  background: lightseagreen;
+}
+
+.footer {
+  /* CSS GRID properties */
+  grid-column: 1 / -1;
+
+  /* Other CSS properties */
+  background: lightcoral;
+}
