@@ -11,14 +11,11 @@ body {
   font-size: 1.6rem;
   font-weight: 600;
   height: 100%;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
 }
 
 .container {
   display: grid;
-  gap: 5px;
+  gap: 10px;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 100px auto 100px;
   grid-template-areas:
@@ -34,14 +31,18 @@ body {
     'M M C C C C C C C C C C'
     'F F F F F F F F F F F F'
     'F F F F F F F F F F F F';
+  /* place-items: center; */
   background: goldenrod;
+  border: 5px solid blueviolet;
 }
 
 .header {
   grid-area: H;
-  display: flex;
   background: lightseagreen;
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
 .header > div:nth-child(6) {
   margin-left: auto;
@@ -53,14 +54,23 @@ body {
 .menu {
   grid-area: M;
   background: lightcoral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content {
   grid-area: C;
   background: lightseagreen;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .footer {
   grid-area: F;
   background: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
