@@ -1,0 +1,62 @@
+/* reset browser defaults */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  color: orangered;
+  padding: 30px;
+}
+.main {
+  background: goldenrod;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+}
+
+.container-auto-fit {
+  /*
+  * At each threshold of 100px in the following case, new cell is created
+  * however with auto-fit the newly created cell is of 0px therefore
+  * existing cell can occupy the fully available space. Therefore with auto-fit 
+  * the browser window scales very well.
+  */
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: 100px 100px;
+  border: 3px solid green;
+}
+
+.container-auto-fill {
+  /*
+  * At each threshold of 100px in the following case, new cell is created
+  * however with auto fill, the newly created cells is of 100px therefore
+  * even though the cell is blank still occupies the space of 
+  * 100px therefore the positioning. So it does not
+  * scale well when we resize the window.
+  */
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 100px 100px;
+  border: 3px solid blue;
+}
+
+.container-auto-fit > div:nth-child(odd) {
+  background: lightseagreen;
+}
+.container-auto-fit > div:nth-child(even) {
+  background: lightcoral;
+}
+.container-auto-fill > div:nth-child(odd) {
+  background: lightseagreen;
+}
+.container-auto-fill > div:nth-child(even) {
+  background: lightcoral;
+}
