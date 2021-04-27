@@ -1,0 +1,66 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 100px auto 100px;
+  grid-template-areas:
+    'H H H H H H H H H H H H'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'M M C C C C C C C C C C'
+    'F F F F F F F F F F F F'
+    'F F F F F F F F F F F F';
+  background: goldenrod;
+}
+
+.header {
+  grid-area: H;
+  display: flex;
+  background: lightseagreen;
+  padding: 40px;
+}
+.header > div:nth-child(6) {
+  margin-left: auto;
+}
+.header > div:nth-child(even) {
+  padding: 0 30px;
+}
+
+.menu {
+  grid-area: M;
+  background: lightcoral;
+}
+
+.content {
+  grid-area: C;
+  background: lightseagreen;
+}
+
+.footer {
+  grid-area: F;
+  background: lightsalmon;
+}
