@@ -5,9 +5,9 @@ const container = document.querySelector('.container');
 // Items
 const title = document.querySelector('.title');
 const sneaker = document.querySelector('.sneaker img');
-const purchase = document.querySelector('.purchase button');
 const description = document.querySelector('.info h3');
 const sizes = document.querySelector('.sizes');
+const purchase = document.querySelector('.purchase button');
 
 // Moving animation event
 container.addEventListener('mousemove', (e) => {
@@ -23,10 +23,10 @@ container.addEventListener('mouseenter', (e) => {
 
   // POpOut
   title.style.transform = 'translateZ(150px)';
-  sneaker.style.transform = 'translateZ(150px';
-  //   purchase.style.transform = 'translateZ(150px)';
-  description.style.transform = 'translateZ(150px)';
-  //   sizes.style.transform = 'translateZ(150px)';
+  sneaker.style.transform = 'translateZ(200px) rotateZ(-45deg)';
+  description.style.transform = 'translateZ(125px)';
+  //   sizes.style.transform = 'translateZ(100px)';
+  //   purchase.style.transform = 'translateZ(75px)';
 });
 
 // Animate when mouse pointer out
@@ -36,8 +36,8 @@ container.addEventListener('mouseleave', (e) => {
 
   // POpBack
   title.style.transform = 'translateZ(0)';
-  sneaker.styel.transform = 'translateZ(0)';
-  //   purchase.style.transform = 'translateZ(0)';
+  sneaker.style.transform = 'translateZ(0) rotateZ(0deg)';
   description.style.transform = 'translateZ(0)';
   //   sizes.style.transform = 'translateZ(0)';
+  //   purchase.style.transform = 'translateZ(0)';
 });
