@@ -31,7 +31,7 @@ const quickSortBestCaseScenario = (array) => {
   // to O(n) linear for worst case scenario.
 
   // select middle element as the pivot
-  let pivot = array[array.length / 2];
+  let pivot = array[Math.floor(array.length / 2)];
   const leftSubArray = [];
   const rightSubArray = [];
 
