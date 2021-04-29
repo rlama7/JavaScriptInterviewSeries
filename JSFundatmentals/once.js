@@ -19,3 +19,9 @@ function foo() {
 foo();
 foo();
 foo();
+
+// void operator evaluates the expression and then return undefined
+// therefore can not call function fooOnce() again.
+void (function fooOnce() {
+  console.log('you can call me only ONCE!');
+})();

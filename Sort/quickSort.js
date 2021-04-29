@@ -19,15 +19,18 @@
  *
  * return recursive call to the quickSort() with the leftarray partiton, pivot, and the right array partition
  *
- * Time Complexity: O(n logn)
- * Space Complexity: O(n) due to use of call stack / partition array
+ * Time Complexity: O(n logn) Best case / O(n^2) worst case
+ * Space Complexity: O(log n) best case / O(n) worst case :
+ * due to use of call stack / partition array
  *
  */
 const quickSort = (array) => {
   // base case
   if (array.length <= 1) return array;
 
-  // assign last array element as the pivot
+  // to aim for the best case scenario,
+  // select middle element as a pivot
+  // or select random element as pivot
   const pivot = array[array.length - 1];
   const leftArray = [];
   const rightArray = [];
