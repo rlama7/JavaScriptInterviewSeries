@@ -16,7 +16,8 @@ const removeDuplicatesUsingIncludes = (array) => {
 // using sets
 const removeDuplicatesUsingSets = (array) => [...new Set(array)];
 
-// Adding a unique method to the array prototype
+// Adding a unique method to the Array prototype
+// In JavaScript the arart 
 
 const array1 = [
   ['apple', '2.50'],
