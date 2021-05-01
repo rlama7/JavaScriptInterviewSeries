@@ -22,6 +22,12 @@
  *
  * // amazon screening
  *
+ * Provided that the movie data set is in sorted order,
+ * time complexity O(n) linear | and space comlexity O(k) where k<=n
+ *
+ * if the data set is not in sorted order then the time complexity O(n log n) using merge sort
+ * space complexity is O(k) where k<=n
+ *
  * @param {*} flightDuration  duration of the flight in minutes
  * @param {*} movieDataSet    list of movies in minutes
  */
@@ -54,6 +60,12 @@ const findMovieWithLongestLength = (result) => {
 };
 
 const onFlightMovieRecommendation = (flightDuration, movieDataSet) => {
+  // sort movieDataSet if not in ascending order
+  // we'll presume the movieDataSet is in sorted order
+  // if not we'll sort otherwise the result may not be desired one
+  // check the test case third for flightDuration3 and movieDataSet3
+  //movieDataSet.sort((a, b) => a - b);
+
   // if the flightDuration is less than 30 minute then we
   // can NOT recommend any movies
   let targetLength = flightDuration - 30;
@@ -108,9 +120,31 @@ const onFlightMovieRecommendation = (flightDuration, movieDataSet) => {
 
 const flightDuration1 = 30;
 const flightDuration2 = 90;
+const flightDuration3 = 120;
+const flightDuration4 = 80;
+const flightDuration5 = 50;
+const flightDuration6 = 75;
+const flightDuration7 = 75;
 const movieDataSet1 = [1, 5, 9, 10, 11, 20, 25, 35, 40, 50, 59];
-// possible choices -> [ [1,59], [10,50], [20,40], [25,35] ]
-//                           ^ first one with the longest running time should be returned as the final result
+const movieDataSet2 = [1, 5, 9, 10, 11, 20, 25, 35, 40, 50, 59];
+const movieDataSet3 = [80, 5, 9, 10, 11, 20, 25, 35, 40, 50, 70];
+const movieDataSet4 = [1, 5, 9, 10, 11, 20, 25, 35, 40, 50, 59];
+const movieDataSet5 = [1, 5, 8, 10, 11, 12, 15, 19, 30, 40, 49, 59];
+const movieDataSet6 = [1, 5, 9, 10, 11, 20, 25, 35, 40, 50, 59];
+const movieDataSet7 = [1, 5, 9, 10, 11, 20, 25, 35, 40, 50, 59];
 
 console.log(onFlightMovieRecommendation(flightDuration1, movieDataSet1)); // [ -1, -1 ]
 console.log(onFlightMovieRecommendation(flightDuration2, movieDataSet1)); // [1,59]
+// possible choices -> [ [1,59], [10,50], [20,40], [25,35] ]
+//                           ^ first one with the longest running time should be returned as the final result
+
+console.log(onFlightMovieRecommendation(flightDuration3, movieDataSet3)); // [ 10, 80 ]
+// here the movie data set has to be provided in sorted order otherwise we'll sort
+// the data. this will have related consequences on performance since, sorting will
+// result in O(n logn) using merge sort
+// if not the result will be in O(n) - linear
+
+console.log(onFlightMovieRecommendation(flightDuration4, movieDataSet4)); // [ -1, -1 ]
+console.log(onFlightMovieRecommendation(flightDuration5, movieDataSet5));
+// console.log(onFlightMovieRecommendation(flightDuration6, movieDataSet6));
+// console.log(onFlightMovieRecommendation(flightDuration7, movieDataSet7));
