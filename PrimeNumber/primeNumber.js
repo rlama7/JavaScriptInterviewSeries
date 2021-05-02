@@ -86,4 +86,6 @@ console.log(`Square root of 9: ${Math.sqrt(9)}`);
 console.log(Math.sqrt(15));
 
 const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const array = [-1, 1, 25, 11, 4, 33, 2, 37];
 console.log(primeOrComposite(num));
+console.log(primeOrComposite(array));
