@@ -25,10 +25,10 @@ const wordSplitNCheck = (word, list) => {
   // apply sliding window technique starting from the first character in the 0th index
   // of word
   // on each iteration, you get two words: 0the index to the current window and the rest
-  // compare each word with list and if the words includes in the list
-  // push that word to the result list
-  //   const splitWordArray = word.split('');
-  //   console.log(splitWordArray);
+  // compare if the first word and the second word exists in the list and
+  // if the words includes in the list
+  // return the words
+  // also increment the nextPointer so we move on to do next set of comparisons
 
   let firstPointer = 0,
     nextPointer = 1;
@@ -42,25 +42,17 @@ const wordSplitNCheck = (word, list) => {
       secondWord = word.substring(nextPointer);
     // if the endIndex is omitted, substring() extracts characters to the end of the string
 
-    if (list.includes(firstWord)) result.push(firstWord);
-
-    if (list.includes(secondWord)) result.push(secondWord);
+    if (list.includes(firstWord) && list.includes(secondWord)) {
+      return [firstWord, secondWord];
+    }
 
     // increment the nextPointer
     nextPointer++;
   }
 
   // by this point we should have found some words in the result
-  console.log(result);
-
-  // if the result length is 0 means no match was found in the list
-  if (result.length === 0) {
-    return false;
-  } else {
-    // else there are few matches from the list
-    // but we need to pin point the words because there might be more than 2 matches
-    return true;
-  }
+  // if that is not the case then the substring words do not exist in the dictionary list
+  return 'Sub string words not found in the dictionary';
 };
 
 const word1 = 'newspaper';
@@ -89,6 +81,17 @@ const list5 = [];
 const word6 = 'crossbow';
 const list6 = ['bow', 'bowels', 'croc', 'crook', 'cross', 'pencil', 'paper'];
 
+const word7 = 'ironman';
+const list7 = [
+  'iron',
+  'men',
+  'women',
+  'ferrous',
+  'superwoman',
+  'pencil',
+  'paper',
+];
+
 console.log(wordSplitNCheck(word1, list1)); // [ 'new', 'news', 'paper' ] // true
 
 console.log(wordSplitNCheck(word2, list2)); // [ 'cob', 'web' ] // true;
@@ -96,6 +99,7 @@ console.log(wordSplitNCheck(word3, list3)); // [ 'ray', 'love' ] // true
 console.log(wordSplitNCheck(word4, list4)); // [ 'mount', 'mountain', 'bike' ] //true
 console.log(wordSplitNCheck(word5, list5)); // false
 console.log(wordSplitNCheck(word6, list6)); // [ 'cross', 'bow' ] // true;
+console.log(wordSplitNCheck(word7, list7)); // Sub string words not found in the dictionary // false
 
 // console.log(word.includes('news'));
 // console.log(list.includes(...word));
