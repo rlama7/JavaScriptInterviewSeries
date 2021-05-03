@@ -1,0 +1,12 @@
+[
+    {"id":1,"first_name":"Maybelle","last_name":"Rohmer","email":"mrohmer0@studiopress.com","gender":"Non-binary","salary":"$427879.57","car":"Chevrolet"},
+    {"id":2,"first_name":"Harmonia","last_name":"Labeuil","email":"hlabeuil1@ihg.com","gender":"Genderqueer","salary":"$983055.09","car":"Infiniti"},
+    {"id":3,"first_name":"Henry","last_name":"Hulatt","email":"hhulatt2@geocities.jp","gender":"Genderqueer","salary":"$226823.16","car":"BMW"},
+    {"id":4,"first_name":"Leonard","last_name":"Binder","email":"lbinder3@canalblog.com","gender":"Genderqueer","salary":"$270691.81","car":"Chevrolet"},
+    {"id":5,"first_name":"Jocelin","last_name":"Antuk","email":"jantuk4@bloglines.com","gender":"Genderfluid","salary":"$263892.21","car":"Mazda"},
+    {"id":6,"first_name":"Lonnie","last_name":"Synke","email":"lsynke5@wp.com","gender":"Male","salary":"$707495.47","car":"Ford"},
+    {"id":7,"first_name":"Birk","last_name":"Gritton","email":"bgritton6@google.it","gender":"Female","salary":"$298656.82","car":"Honda"},
+    {"id":8,"first_name":"Ronica","last_name":"Marklow","email":"rmarklow7@bloomberg.com","gender":"Female","salary":"$856287.05","car":"Mercedes-Benz"},
+    {"id":9,"first_name":"Chelsae","last_name":"Kinchington","email":"ckinchington8@gnu.org","gender":"Genderfluid","salary":"$766283.24","car":"Ford"},
+    {"id":10,"first_name":"Karoly","last_name":"Matkovic","email":"kmatkovic9@va.gov","gender":"Genderfluid","salary":"$740607.39","car":"Cadillac"}
+]
