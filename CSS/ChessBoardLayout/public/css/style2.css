@@ -1,0 +1,36 @@
+/* reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1;
+  padding: 30px 25%;
+  text-align: center;
+}
+
+#container {
+  margin: 0 auto;
+  width: 640px;
+  height: 640px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+#container div {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.black {
+  background-color: #000;
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  color: #000;
+}
