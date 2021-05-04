@@ -1,3 +1,34 @@
+/**
+ * moveTargetToEndInPlace.js - A program to move the target element to the end keeping
+ *                             the order of ther rest elements in its original position.
+ * @author                   - Ratna Lama
+ * @version                  - 1.0.0
+ * @description              -
+ * @param {*} array            input list
+ * @param {*} target           target to be moved to the end of the list.
+ *
+ * --->Example<---
+ *          INPUT:
+ *                array1 = [1, 3, 4, 2, 5, 0, 5, 0];
+ *                target1 = 0;
+ *          OUTPUT:
+ *                 array1 = [ 1, 3, 4, 2,5, 5, 0, 0]
+ *
+ * NOte that the NON-target items are in its original position
+ *
+ * --->Algorithm<---
+ *  - iterate through the array list once
+ *  - on each iteration filter items into two buckets: targetElements and nonTargetElements
+ *  - at the end just merge nonTargetElements and targetElements then return
+ *
+ * --->Time Complexity<---
+ * time complexity will be O(n) sinc we iterate through the list only once (linear)
+ *
+ * Space complexity will be however O(n) // actually 2n since we need to store two lists since we
+ * drop constant comes down to linear or O(n)
+ *
+ *
+ */
 const moveTargetToEndInPlace = (array, target) => {
   // check edges cases
   if (array.length <= 1) return array;
@@ -26,7 +57,4 @@ const moveTargetToEndInPlace = (array, target) => {
 const array1 = [1, 3, 4, 2, 5, 0, 5, 0];
 const target1 = 0;
 
-console.log(moveTargetToEndInPlace(array1, target1)); // [
-    1, 3, 4, 2,
-    5, 5, 0, 0
-  ]
+console.log(moveTargetToEndInPlace(array1, target1)); // [ 1, 3, 4, 2,5, 5, 0, 0]
