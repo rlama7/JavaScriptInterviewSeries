@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board Grid with Javascript</title>
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Grid - Chess Board Design</h1>
+    </header>
+
+    <section id="container"></section>
+    
+    <!-- Script -->
+    <scrip>
+        (function () {
+            var _cellBlack = '<div class="black"></div>',
+                _cellWhite = '<div class="white"></div>';
+            var MAX_CELL = 8;
+        
+            var _gridContainer = document.querySelector('#container');
+            for(var i = 0; i < MAX_CELL; i++) {
+                for(var j = 0; j < MAX_CELL; j++) {
+                    if((i + j) % 2 == 0) {
+                        _gridContainer.insertAdjacentHTML('beforeend', _cellBlack);
+                    } else {
+                        _gridContainer.insertAdjacentHTML('beforeend', _cellWhite);
+                    }
+                }
+            }
+        })();
+    </scrip>
+    <!-- <link rel="stylesheet" href="./script/script.js"> -->
+</body>
+</html>
