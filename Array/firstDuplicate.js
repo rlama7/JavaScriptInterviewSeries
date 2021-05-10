@@ -23,4 +23,30 @@
  *
  *
  */
-const firstDuplicate = (array) => {};
+
+// O(n) time | O(n) space
+// uses Set Data Structure
+// Set objects are collections of values. A value in the Set may only occur once.
+const firstDuplicate = (array) => {
+  const seen = new Set();
+
+  for (let index = 0; index < array.length; index++) {
+    if (seen.has(array[index])) {
+      return array[index];
+    } else {
+      seen.add(array[index]);
+      console.log(seen);
+    }
+  }
+
+  // if we reached here means we did not find the duplicate
+  return -1;
+};
+
+const array1 = [12, 3, 4, 5, 2, 3, 4];
+const array2 = [9, 3, 4, 5, 5, 4, 3, 9];
+const array3 = [0, 1, 2, 3, 4, 5];
+
+console.log(firstDuplicate(array1)); // 3
+console.log(firstDuplicate(array2)); // 5
+console.log(firstDuplicate(array3)); // -1
