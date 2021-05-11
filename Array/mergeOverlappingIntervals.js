@@ -31,16 +31,42 @@
  *                                           |__> Overlapping Intervals
  *
  * --->Time Complexity<---
- * time O() ->
- * space O() ->
+ * time O(n log n) -> since we'll need to sort and the Mergesort yields n log n
+ * space O(n) -> linear to store mergerIntervals
  */
 const mergeOverlappingIntervals = (array) => {
-  // sort 2D array in ascending order by the starting value in place, i.e. the input
-  // array will be mutated.
+  // sort 2D array in ascending order by the starting value in place,
+  // i.e. the input array will be mutated.
   array.sort((a, b) => a[0] - b[0]);
-  // merge overlapping intervals
-  // if start of next
-  return array;
+
+  const mergedIntervals = [];
+  let currentInterval = array[0];
+  mergedIntervals.push(currentInterval);
+
+  for (let nextInterval of array) {
+    // destructure
+    // we'll NOT use currentIntervalStart value so we used _ for throw away variable
+    // [_, currentIntervalEnd] = [1,2]
+    // --> currentIntervalEnd = 2
+    // [nextIntervalStart, nextIntervalEnd] = [3,6]
+    // nextIntervalStart -> 3
+    // nextIntervalEnd -> 6
+
+    [_, currentIntervalEnd] = currentInterval;
+    [nextIntervalStart, nextIntervalEnd] = nextInterval;
+
+    // merge overlapping intervals
+    // if end of the current interval is >= start of the next interval
+    // merge --> (equivalent to) update the current intervals end value
+    if (currentIntervalEnd >= nextIntervalStart) {
+      currentInterval[1] = Math.max(currentIntervalEnd, nextIntervalEnd);
+    } else {
+      currentInterval = nextInterval;
+      mergedIntervals.push(currentInterval);
+    }
+  }
+
+  return mergedIntervals;
 };
 
 const array = [
@@ -51,4 +77,4 @@ const array = [
   [9, 12],
 ];
 
-console.log(mergeOverlappingIntervals(array));
+console.log(mergeOverlappingIntervals(array)); // [ [ 1, 2 ], [ 3, 8 ], [ 9, 12 ] ]
