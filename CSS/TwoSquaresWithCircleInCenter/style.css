@@ -1,0 +1,105 @@
+/* reset browser defaults */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* margin: 50px;
+  padding: 50px; */
+}
+
+p {
+  text-align: justify;
+}
+.square {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border: 1px dotted red;
+  background: #fff;
+}
+
+.circle {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* this will give radius of 50px half of width */
+  background: lightseagreen;
+}
+
+.triangleUP {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid lightseagreen;
+}
+
+.triangleDOWN {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 80px solid lightsalmon;
+}
+
+.triangleRIGHT {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 80px solid lightcoral;
+}
+
+.triangleLEFT {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 80px solid lightgreen;
+}
+
+.triangleDIAGONAL {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid lightseagreen;
+  border-bottom: 80px solid lightsalmon;
+  border-left: 80px solid lightgreen;
+  border-right: 80px solid rebeccapurple;
+}
+
+.squareINSET {
+  float: left;
+  width: 100px;
+  height: 100px;
+  shape-outside: inset(10px 10px 5px 100px);
+  background: lightseagreen;
+}
+
+.circleNonShifted {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  shape-outside: circle();
+  clip-path: circle();
+  background: lightcoral;
+}
+
+.circleShifted {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  shape-outside: circle(50% at 10%);
+  clip-path: circle(50% at 5%);
+  background: lawngreen;
+}
