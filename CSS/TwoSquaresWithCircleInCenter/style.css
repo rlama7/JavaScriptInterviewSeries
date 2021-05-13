@@ -7,8 +7,9 @@
 }
 
 body {
-  /* margin: 50px;
-  padding: 50px; */
+  /* margin: 50px; */
+  padding: 50px;
+  line-height: 1.75rem;
 }
 
 p {
@@ -88,7 +89,7 @@ p {
   float: left;
   width: 200px;
   height: 200px;
-  margin: 20px;
+  margin: 10px;
   shape-outside: circle();
   clip-path: circle();
   background: lightcoral;
@@ -99,8 +100,8 @@ p {
   width: 200px;
   height: 200px;
   margin: 20px;
-  shape-outside: circle(50% at 10%);
-  clip-path: circle(50% at 5%);
+  shape-outside: circle(50% at 20%);
+  clip-path: circle(50% at 10%);
   background: lawngreen;
 }
 
@@ -109,7 +110,7 @@ p {
   width: 200px;
   height: 200px;
   margin: 10px;
-  shape-outside: ellipse(25% 50%);
+  shape-outside: ellipse(35% 50%);
   clip-path: ellipse(25% 50%);
   background: blueviolet;
 }
@@ -140,4 +141,13 @@ p {
     0 20%
   );
   background: chocolate;
+}
+
+.earth img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  shape-outside: circle();
+  clip-path: circle();
 }
