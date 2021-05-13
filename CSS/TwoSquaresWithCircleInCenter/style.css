@@ -103,3 +103,41 @@ p {
   clip-path: circle(50% at 5%);
   background: lawngreen;
 }
+
+.ellipse {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  shape-outside: ellipse(25% 50%);
+  clip-path: ellipse(25% 50%);
+  background: blueviolet;
+}
+
+.polygon {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 0 20px;
+  shape-outside: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    60% 20%,
+    60% 100%,
+    40% 100%,
+    40% 20%,
+    0 20%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    60% 20%,
+    60% 100%,
+    40% 100%,
+    40% 20%,
+    0 20%
+  );
+  background: chocolate;
+}
