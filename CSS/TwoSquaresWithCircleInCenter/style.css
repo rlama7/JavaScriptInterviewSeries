@@ -15,6 +15,34 @@ body {
 p {
   text-align: justify;
 }
+
+.outerSquare {
+  float: left;
+  height: 400px;
+  width: 400px;
+  shape-outside: inset();
+  background: lightcoral;
+}
+
+.innerCircle {
+  height: 400px;
+  width: 400px;
+  shape-outside: circle(50% at 50%);
+  clip-path: circle(50% at 50%);
+  background: yellowgreen;
+}
+
+.innerMostTriangle {
+  height: 0;
+  width: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid lightseagreen;
+}
+
+.drawInfo {
+  padding-right: auto;
+}
 .square {
   margin: 20px;
   width: 100px;
