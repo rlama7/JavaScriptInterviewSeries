@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Two squares With Circle in Center</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <p>Draw Two Squares with Circle in Center that is Vertically and horizontally centered</p>
+    <p>Each square must be of with 50px sid by side</p>
+    <p>Each square should have a circle in the center with a radius of 10px</p>
+    <p>Distance between two square should be 10px</p>
+    <p>Referece: https://www.freecodecamp.org/news/css-shapes-explained-how-to-draw-a-circle-triangle-and-more-using-pure-css/ </p>
+    <br />
+
+    <hr />
+    <!-- <div class="square">
+        <span></span>
+    </div>
+    <div class="square">
+        <span></span>
+    </div> -->
+
+    <p>Square</p>
+    <div class="square"></div>
+    <hr />
+
+    <p>Circle</p>
+    <div class="circle"></div>
+    <hr />
+
+    <p>Triangle UP</p>
+    <div class="triangleUP"></div>
+
+    <p>Triangle DOWN</p>
+    <div class="triangleDOWN"></div>
+
+    <p>Triangle RIGHT</p>
+    <div class="triangleRIGHT"></div>
+
+    <p>Triangle LEFT</p>
+    <div class="triangleLEFT"></div>
+
+    <p>Triangle Diagonal</p>
+    <div class="triangleDIAGONAL"></div>
+
+    <hr />
+    <p>Use of <strong>shape-outside</strong> in CSS. This property defines a shape that the text will wrap/flow around.</p>
+    <br />
+    <ol>
+        <p>Along with this property we've some basic shapes:</p>
+        <br />
+
+        <li><strong>inset()</strong></li>
+        <p>It can be used to create a rectangle/square with an options offset for the wrapping text. It allows you to provide values on how much you want your wrappint text to overlap the shape.</p>
+        <br />
+        <div class="">
+            <div class="squareINSET"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ducimus nobis voluptatibus nihil ea, eligendi perspiciatis recusandae pariatur ipsam, et, accusantium suscipit? Vel dicta laborum voluptatum natus perferendis obcaecati, officiis et dolor labore tempora voluptates deserunt, amet necessitatibus incidunt saepe non odio ad eum quos laudantium, nobis ea animi! Numquam dolorum quis pariatur. Doloribus, animi totam veritatis sequi reiciendis impedit ipsa architecto explicabo error nisi tempora accusantium mollitia consectetur voluptatibus eum sit molestias. Expedita, quidem nisi explicabo eos dignissimos illum.</p>
+            <br />
+            <p>The text is offset by the specified values. In this case: top: 10px right: 10px bottom: 5px and left: 100px</p>
+        </div>
+        <br />
+
+        <li><strong>circle()</strong></li>
+        <div class="">
+            <div class="circleNonShifted"></div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero delectus tempore fuga vel ullam eos eveniet veniam sit est? Eos commodi temporibus incidunt doloremque vitae ducimus quod iure deserunt animi nisi aperiam ad corporis quibusdam voluptatum at aliquam, debitis provident quas molestias harum delectus voluptatibus possimus. Corrupti omnis autem, quasi facilis ratione magnam voluptatum, commodi neque culpa quos ipsam, aliquam beatae non? Voluptates quam suscipit perferendis tempora ex iusto quos doloribus, accusamus molestiae dignissimos iste nulla, laborum eos saepe quo.</p>
+            <br />
+            <p>The circle takes two values: The first value is the raidus and the second value is the poistion. These values will specify the center of the circle.</p>
+        </div>
+
+        <br />
+        <div class="">
+            <div class="circleShifted"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae alias quia assumenda maiores molestiae a voluptas neque nemo unde? Facere mollitia quos ipsam eveniet in perspiciatis doloribus reiciendis consequuntur commodi repellendus assumenda nam quo natus quisquam tempore illum distinctio unde quibusdam atque vel esse, dignissimos magnam recusandae. Minima quo quod, eum quibusdam voluptatem ex reiciendis placeat, accusantium nesciunt provident possimus, amet sequi quia dolore. Iure alias nam tempora corporis neque tempore non impedit ipsa? Possimus nam sunt vero officia nesciunt!</p>
+            <br />
+            <br />
+            <br />
+            <p>In this example, we've set the radius to 50% and the second value is the position. These values will specify the center of the circle.</p>
+            <p>We've shifted the center of the circle by 10%. Note that the word 'at' has to be used between the radius and position values.</p>
+        </div>
+        
+        <br />
+        <br />
+
+        <li><strong>ellipse()</strong></li>
+        <p></p>
+        <br />
+        
+        <li><strong>polygon()</strong></li>
+        <p></p>
+        <br />
+    </ol>
+    <br />
+    <p><strong>NOTE:</strong> The element that we are going to apply the shape to with the shape-outside property to has to be floated. It also has to have defined width and height.</p>
+</body>
+</html>
