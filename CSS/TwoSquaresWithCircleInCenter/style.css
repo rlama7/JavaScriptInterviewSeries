@@ -1,0 +1,181 @@
+/* reset browser defaults */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* margin: 50px; */
+  padding: 50px;
+  line-height: 1.75rem;
+}
+
+p {
+  text-align: justify;
+}
+
+.outerSquare {
+  float: left;
+  height: 400px;
+  width: 400px;
+  shape-outside: inset();
+  background: lightcoral;
+}
+
+.innerCircle {
+  height: 400px;
+  width: 400px;
+  shape-outside: circle(50% at 50%);
+  clip-path: circle(50% at 50%);
+  background: yellowgreen;
+}
+
+.innerMostTriangle {
+  height: 0;
+  width: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 200px solid lightseagreen;
+}
+
+.drawInfo {
+  padding-right: auto;
+}
+.square {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border: 1px dotted red;
+  background: #fff;
+}
+
+.circle {
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* this will give radius of 50px half of width */
+  background: lightseagreen;
+}
+
+.triangleUP {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 80px solid lightseagreen;
+}
+
+.triangleDOWN {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 80px solid lightsalmon;
+}
+
+.triangleRIGHT {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 80px solid lightcoral;
+}
+
+.triangleLEFT {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-right: 80px solid lightgreen;
+}
+
+.triangleDIAGONAL {
+  margin: 20px;
+  width: 0;
+  height: 0;
+  border-top: 80px solid lightseagreen;
+  border-bottom: 80px solid lightsalmon;
+  border-left: 80px solid lightgreen;
+  border-right: 80px solid rebeccapurple;
+}
+
+.squareINSET {
+  float: left;
+  width: 100px;
+  height: 100px;
+  shape-outside: inset(10px 10px 5px 100px);
+  background: lightseagreen;
+}
+
+.circleNonShifted {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  shape-outside: circle();
+  clip-path: circle();
+  background: lightcoral;
+}
+
+.circleShifted {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  shape-outside: circle(50% at 20%);
+  clip-path: circle(50% at 10%);
+  background: lawngreen;
+}
+
+.ellipse {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  shape-outside: ellipse(35% 50%);
+  clip-path: ellipse(25% 50%);
+  background: blueviolet;
+}
+
+.polygon {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 0 20px;
+  shape-outside: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    60% 20%,
+    60% 100%,
+    40% 100%,
+    40% 20%,
+    0 20%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 20%,
+    60% 20%,
+    60% 100%,
+    40% 100%,
+    40% 20%,
+    0 20%
+  );
+  background: chocolate;
+}
+
+.earth img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  shape-outside: circle();
+  clip-path: circle();
+}

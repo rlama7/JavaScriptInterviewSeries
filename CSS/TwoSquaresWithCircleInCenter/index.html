@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Two squares With Circle in Center</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+
+    <div class="">
+        <div class="outerSquare">
+            <div class="innerCircle">
+                <div class="innerMostTriangle"></div>
+            </div>
+        </div>
+        <div class="drawInfo">
+            <p>Draw Two Squares with Circle in Center that is Vertically and horizontally centered</p>
+            <p>Each square must be of with 50px sid by side</p>
+            <p>Each square should have a circle in the center with a radius of 10px</p>
+            <p>Distance between two square should be 10px</p>
+            <p>Referece: https://www.freecodecamp.org/news/css-shapes-explained-how-to-draw-a-circle-triangle-and-more-using-pure-css/ </p>
+        </div>
+    </div>
+    
+    <br />
+
+    <hr />
+    
+
+    <h2>Square</h2>
+    <div class="square"></div>
+    <hr />
+
+    <h2>Circle</h2>
+    <div class="circle"></div>
+    <hr />
+
+    <h2>Triangle UP</h2>
+    <div class="triangleUP"></div>
+
+    <h2>Triangle DOWN</h2>
+    <div class="triangleDOWN"></div>
+
+    <h2>Triangle RIGHT</h2>
+    <div class="triangleRIGHT"></div>
+
+    <h2>Triangle LEFT</h2>
+    <div class="triangleLEFT"></div>
+
+    <h2>Triangle Diagonal</h2>
+    <div class="triangleDIAGONAL"></div>
+
+    <hr />
+    <p>Use of <strong>shape-outside</strong> in CSS. This property defines a shape that the text will wrap/flow around.</p>
+    <br />
+    <ol>
+        <p>Along with this property we've some basic shapes:</p>
+        <br />
+
+        <li><h2>inset()</h2></li>
+        <p>It can be used to create a rectangle/square with an options offset for the wrapping text. It allows you to provide values on how much you want your wrappint text to overlap the shape.</p>
+        <br />
+        <div class="">
+            <div class="squareINSET"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ducimus nobis voluptatibus nihil ea, eligendi perspiciatis recusandae pariatur ipsam, et, accusantium suscipit? Vel dicta laborum voluptatum natus perferendis obcaecati, officiis et dolor labore tempora voluptates deserunt, amet necessitatibus incidunt saepe non odio ad eum quos laudantium, nobis ea animi! Numquam dolorum quis pariatur. Doloribus, animi totam veritatis sequi reiciendis impedit ipsa architecto explicabo error nisi tempora accusantium mollitia consectetur voluptatibus eum sit molestias. Expedita, quidem nisi explicabo eos dignissimos illum.</p>
+            <br />
+            <p>The text is offset by the specified values. In this case: top: 10px right: 10px bottom: 5px and left: 100px</p>
+        </div>
+        <br />
+
+        <li><h2>circle()</h2></li>
+        <div class="">
+            <div class="circleNonShifted"></div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero delectus tempore fuga vel ullam eos eveniet veniam sit est? Eos commodi temporibus incidunt doloremque vitae ducimus quod iure deserunt animi nisi aperiam ad corporis quibusdam voluptatum at aliquam, debitis provident quas molestias harum delectus voluptatibus possimus. Corrupti omnis autem, quasi facilis ratione magnam voluptatum, commodi neque culpa quos ipsam, aliquam beatae non? Voluptates quam suscipit perferendis tempora ex iusto quos doloribus, accusamus molestiae dignissimos iste nulla, laborum eos saepe quo.</p>
+            <br />
+            <p>The circle takes two values: The first value is the raidus and the second value is the poistion. These values will specify the center of the circle.</p>
+        </div>
+
+        <br />
+        <div class="">
+            <div class="circleShifted"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae alias quia assumenda maiores molestiae a voluptas neque nemo unde? Facere mollitia quos ipsam eveniet in perspiciatis doloribus reiciendis consequuntur commodi repellendus assumenda nam quo natus quisquam tempore illum distinctio unde quibusdam atque vel esse, dignissimos magnam recusandae. Minima quo quod, eum quibusdam voluptatem ex reiciendis placeat, accusantium nesciunt provident possimus, amet sequi quia dolore. Iure alias nam tempora corporis neque tempore non impedit ipsa? Possimus nam sunt vero officia nesciunt!</p>
+            <br />
+            <br />
+            <br />
+            <p>In this example, we've set the radius to 50% and the second value is the position. These values will specify the center of the circle.</p>
+            <p>We've shifted the center of the circle by 10%. Note that the word 'at' has to be used between the radius and position values.</p>
+        </div>
+        
+        <br />
+        <br />
+
+        <li><h2>ellipse()</h2></li>
+        <div class="">
+            <div class="ellipse"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestiae deleniti necessitatibus, officiis eius deserunt amet, culpa placeat omnis asperiores cum neque dolorum. Quisquam deserunt autem temporibus corporis cum blanditiis ad iure tenetur non reiciendis beatae aliquid repudiandae cumque totam tempore obcaecati inventore voluptate eaque, accusantium numquam atque sint dicta cupiditate. Quod modi quos nobis quas inventore minima dolore commodi, accusantium tenetur sunt nam natus, dicta magnam necessitatibus? Omnis soluta repudiandae odio quaerat magnam inventore dolore incidunt ullam eius natus.</p>
+        </div>
+        <br />
+        <br/>
+        <p>Ellipses work the same way as circles except that they creates an oval. You can define 
+            both the X value and the Y value, like this: <strong>ellipse(25px 50px)</strong>.
+        </p>
+        <br />
+        
+        <li><h2>polygon()</h2></li>
+        <p>A ploygon is a shape with different vertices/coordinates defined.
+            Below let's create a <strong>"T"</strong> shape. Le'ts start from 
+            the  coordinates 0,0 and move from left to right to create the <strong>"T"</strong> shape. 
+        </p>
+        <br />
+        <div class="">
+            <div class="polygon"></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, cupiditate dignissimos vel cum quam consectetur nihil distinctio! Molestiae eius sit adipisci tempore, veritatis veniam architecto dolores vero accusantium eligendi cum rem numquam culpa omnis exercitationem recusandae illum perspiciatis odio earum fugit tempora corporis! Nemo accusamus similique perferendis tempore, ex rem dolorum quas distinctio atque corporis ullam quae reiciendis officia vitae, vero voluptas quos praesentium, porro aut doloremque. Minima voluptatibus, aliquam, iure rem eius, officiis consequatur officia placeat earum consectetur velit.</p>
+        </div>
+        <br />
+        <br />
+
+        <li><h2>Images</h2></li>
+        <p>One can also use images with transparent background to create shape 
+            as in the example below. Here we have used the transparent earth image in 
+            combination with <strong>outside-shape:circle()</strong> and 
+            <strong>clip-path:circle()</strong> property 
+            to make the text wrap around the earth image easily using just 
+            the CSS trick.
+        </p>
+        <br />
+        <div class="">
+            <div class="earth">
+                <img src="./images/earth.png" alt="earth">
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam cupiditate harum earum corrupti! Sit modi provident fuga dolores laboriosam ut recusandae officiis, assumenda distinctio quam facere culpa amet vitae laborum in non placeat praesentium molestiae voluptate debitis! Ad laboriosam qui ex magni molestiae accusamus dolores architecto blanditiis temporibus debitis praesentium nisi, repellat tempore ipsum explicabo. Officia quasi sequi quos cumque explicabo, natus corporis esse ducimus voluptatem rerum? Impedit cupiditate praesentium quaerat eligendi quia temporibus facere doloremque? Eum culpa amet totam.</p>
+        </div>
+    </ol>
+    <br />
+    <p><strong>NOTE:</strong> The element that we are going to apply the shape to with the shape-outside property to has to be floated. It also has to have defined width and height.</p>
+    
+
+</body>
+</html>
