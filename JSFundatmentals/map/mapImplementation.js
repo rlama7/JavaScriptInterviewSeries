@@ -1,5 +1,5 @@
 /**
- * Map implementation in JavaScript
+ * map implementation in JavaScript
  */
 const myMap = function () {
   this.collection = {};
@@ -69,3 +69,18 @@ map.set('grapes', 100);
 console.log(map.get('cherry')); // 6
 console.log(map.size()); // 5
 console.log(map.values()); //[ 10, 12, 6, 1, 100 ]
+
+console.log(map);
+/**
+ myMap {
+  collection: { apple: 10, banana: 12, cherry: 6, dragonfruit: 1, grapes: 100 },
+  count: 5,
+  size: [Function (anonymous)],
+  set: [Function (anonymous)],
+  has: [Function (anonymous)],
+  get: [Function (anonymous)],
+  delete: [Function (anonymous)],
+  values: [Function (anonymous)],
+  clear: [Function (anonymous)]
+}
+ */
