@@ -1,5 +1,5 @@
 /**
- * MapJS.js     - A program to demonstrate usage of inbuilt JavaScript Hashmap.
+ * mapJS.js     - A program to demonstrate usage of inbuilt JavaScript Hashmap.
  * @author      - Ratna Lama
  * @version     - 1.0.0
  * @description - The Map object holds key-value pairs and remembers the original insertion
