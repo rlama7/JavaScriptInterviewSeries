@@ -118,10 +118,6 @@ console.log(contacts.size); // 6
  */
 console.log(contacts.get('Taylor')); // { phone: '123-456-789', address: '123 Main St., Hollywood, CA USA' }
 
-/**
- * Map.prototype.clear()
- */
-
 console.log('\n------------------[key, value]---------------------------');
 // Iteration Methods
 // Iterating Map with for...of
@@ -258,7 +254,29 @@ console.log([...countryToCapitalCityMap]);
 ]
  */
 
-console.log('\n---------------------------------------------');
+console.log('\n---clear()---delete(key)---------------------------------');
+const iMap = new Map();
+iMap.set('iphone', 'Apple');
+iMap.set('windows', 'Microsoft');
+iMap.set('android', 'Google');
+iMap.set('BlackBerry', 'Research Motion');
+iMap.set('PlayStation', 'Sony Inc.');
+
+/**
+ * clear() -
+ * Removes all key-value paris from the Map object.
+ */
+
+/**
+ * delete(key) -
+ * Returns true if an element in the Map object existed and has been removed,
+ * or flase if the element does not exist.
+ */
+console.log(iMap.delete('BlackBerry')); // true
+console.log(iMap.get('BlackBerry')); // undefined <- since this key has been removed.
+iMap.clear();
+console.log(iMap); // Map(0) {}
+
 console.log('\n---------------------------------------------');
 console.log('\n---------------------------------------------');
 console.log('\n---------------------------------------------');
