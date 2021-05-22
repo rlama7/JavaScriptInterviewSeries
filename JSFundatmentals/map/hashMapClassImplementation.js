@@ -9,7 +9,7 @@ function hashStringToInt(string, tableSize) {
 
 class HashTable {
   constructor(table) {
-    this.table = new Array(5);
+    this.table = new Array(3);
     count = 0;
     loadFactor = this.count / this.table.length;
   }
