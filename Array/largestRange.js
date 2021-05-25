@@ -20,5 +20,5 @@
 
 const largestRange = (array) => {};
 
-const array1 = [1, 5, 3, 2, 12, 22, 4, 10];
+const array1 = [1, 5, 3, 2, 12, 22, 4, 11, 10];
 console.log(largestRange(array1));
