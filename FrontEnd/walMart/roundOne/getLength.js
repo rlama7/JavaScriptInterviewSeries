@@ -9,7 +9,10 @@
  *
  * INPUT: getLength('hello')
  * OUTPUT: 5
+ *
+ * @param {*} string input string
  */
+
 const getLength = (string) => {
   // for undefined and null as an input return some message | -1;
   if (string === undefined || string === null) return -1;
