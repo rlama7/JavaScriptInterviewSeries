@@ -79,8 +79,9 @@ const removeDuplicatesUsingHashMap = (array) => {
   // only those array element to the hash map that
   // has not been seen.
   for (let index = 0; index < array.length; index++) {
-    if (map.has(array[index])) continue;
-    map.set(index, array[index]);
+    if (!map.has(array[index])) {
+      map.set(index, array[index]);
+    }
   }
   return [Array.from(map.values())];
 };
@@ -89,3 +90,19 @@ console.log(removeDuplicatesUsingHashMap(array1)); // [ 0, 1, 2 ]
 console.log(removeDuplicatesUsingHashMap(array2)); // [ 'a' ]
 console.log(removeDuplicatesUsingHashMap(array3)); // [ 10, 11, 12, 'a' ]
 console.log(removeDuplicatesUsingHashMap(array4)); // [ 100, 1, 22, 'b', 'c' ]
+
+console.log('\n---------Using forEach---------------------');
+const removeDuplicatesUsingForEach = (array) => {
+  const uniqueArray = [];
+  array.forEach((element) => {
+    if (!uniqueArray.includes(element)) {
+      uniqueArray.push(element);
+    }
+  });
+  return uniqueArray;
+};
+
+console.log(removeDuplicatesUsingForEach(array1)); // [ 0, 1, 2 ]
+console.log(removeDuplicatesUsingForEach(array2)); // [ 'a' ]
+console.log(removeDuplicatesUsingForEach(array3)); // [ 10, 11, 12, 'a' ]
+console.log(removeDuplicatesUsingForEach(array4)); // [ 100, 1, 22, 'b', 'c' ]
