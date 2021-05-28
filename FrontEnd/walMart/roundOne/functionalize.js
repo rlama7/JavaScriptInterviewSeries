@@ -1,6 +1,6 @@
 /**
  * Create a function called fucntionalize which takes a value and returns
- * a fucntion, which when executed, returns that value.
+ * a function, which when executed, returns that value.
  *
  * @param {*} val input value to be returned
  *
