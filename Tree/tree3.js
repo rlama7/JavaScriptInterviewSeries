@@ -68,6 +68,7 @@ console.log(node);
 console.log('\n--------------Tree Class--------------------------');
 /**
  * Create a tree class. The tree constructor should initialize a 'root' property to null.
+ * root property is the entry point of reference to the rest of the tree nodes.
  *
  * Then on the tree class implement:
  *  1) traverseBFS -> to traverse the tree in a level-order fashion or breadth first search.
@@ -80,6 +81,28 @@ console.log('\n--------------Tree Class--------------------------');
  *
  *     NOTE: --> Inorder traversal of a Tree in a Depth First Search yields sorted list.
  */
-class Tree {}
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+}
+
+// intantiate a node
+const rootNode = new Node(101);
+
+// intantiate a tree
+const tree = new Tree();
+
+// assign the root node to the tree
+tree.root = rootNode;
+
+console.log(tree);
+/**
+ Tree { 
+        root: Node { 
+                    data: 101, children: [] 
+              } 
+     }
+ */
 
 module.exports = { Node, Tree };
