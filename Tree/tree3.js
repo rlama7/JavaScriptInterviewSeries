@@ -85,6 +85,52 @@ class Tree {
   constructor() {
     this.root = null;
   }
+
+  // BreadthFirstSearch
+  traverseBFS(fn) {
+    // initialize queue with the root node of the tree
+    const queue = [this.root];
+
+    // iterate through the queue as long as there is a single element
+    // we'll use array that acts like a queue for data structure
+    // queue datastructures follows: FIFO -> First In First Out
+    // OUT <--[1, 2, 3, 4,  5] <--- IN
+    // imagine a line at a cinema where first person in line gets the first ticket
+
+    while (queue.length) {
+      // remove the first element from the queue
+      const node = queue.shift();
+      // push node's children to the queue
+      queue.push(...node.children);
+      // repeat the process
+      fn(node);
+    }
+  }
+
+  // DepthFirstSearch
+  traverseDFS(fn) {
+    // initialize stack with the root node of the tree
+    const stack = [this.root];
+
+    // iterate through the stack as long as there are elements
+    // we'll use array that acts like a stack for the data structure
+    // stack datastructure follows: LIFO --> Last In First Out
+    // in the Stack datastructure data in/out happens only from the one end.
+    // since JS array are dynamic and we can add and remove elements from array both
+    // from front and back, we'll limit out stack to be able to only interact with
+    // data in/out from the front
+    //    data in/out <--> [1, 2, 3, 4, 5] | this end is sealed
+
+    while (stack.length) {
+      // remove the first element from the stack
+      const node = stack.shift();
+      // push node's children to the stack
+      stack.unshift(...node.children);
+
+      // repeat the process
+      fn(node);
+    }
+  }
 }
 
 // intantiate a node
