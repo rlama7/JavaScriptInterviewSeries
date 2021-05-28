@@ -11,8 +11,61 @@
  * assigned to the data propeerty and initialize and empty array for storing
  * children. The node class should have methods 'add' and 'remove'
  */
-class Node {}
+console.log('\n--------------Node Class--------------------------');
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.children = [];
+  }
 
+  // add data
+  add(val) {
+    // create a new node with the val then
+    // push it to the children array
+    this.children.push(new Node(val));
+  }
+
+  // remove data
+  remove(val) {
+    this.children = this.children.filter((node) => node.data !== val);
+  }
+}
+
+const node = new Node(10);
+node.add(100);
+node.add(200);
+node.add(30);
+node.add(75);
+
+console.log(node);
+
+/**
+ Node {
+  data: 10,
+  children: [
+    Node { data: 100, children: [] },
+    Node { data: 200, children: [] },
+    Node { data: 30, children: [] },
+    Node { data: 75, children: [] }
+  ]
+}
+ */
+
+node.remove(200);
+console.log(node);
+
+/**
+ Node {
+  data: 10,
+  children: [
+    Node { data: 100, children: [] },
+    Node { data: 30, children: [] },
+    Node { data: 75, children: [] }
+  ]
+}
+ */
+
+console.log('\n--------------Tree Class--------------------------');
 /**
  * Create a tree class. The tree constructor should initialize a 'root' property to null.
  *
@@ -28,3 +81,5 @@ class Node {}
  *     NOTE: --> Inorder traversal of a Tree in a Depth First Search yields sorted list.
  */
 class Tree {}
+
+module.exports = { Node, Tree };
