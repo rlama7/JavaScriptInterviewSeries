@@ -135,3 +135,23 @@ console.log(isConnected('A', 'D')); // true
 console.log(isConnected('A', 'E')); // false
 console.log(isConnected('B', 'A')); // true
 console.log(isConnected('B', 'C')); // true s
+
+/**
+ * Adjacency List
+ *
+ * For every node store a list of what node it's connected to
+ *
+ * Time complexity to find adjacent nodes -> O(1)
+ *
+ * Time complexity to check if two nodes are connected --> O(log v) if each adjacent row is sorted
+ *
+ * Space complexity --> O(e)
+ */
+const nodes = ['A', 'B', 'C', 'D', 'E'];
+const adjacencyList = [
+  ['B', 'D'], // A'S CONNECTION
+  ['A', 'C'], // // B'S CONNECTION
+  ['B', 'D', 'E'], // // C'S CONNECTION
+  ['A', 'C', 'E'], // // D'S CONNECTION
+  ['C', 'D'], // // E'S CONNECTION
+];
