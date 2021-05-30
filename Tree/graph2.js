@@ -122,4 +122,16 @@ console.log(finadAdjacencies('E')); // [ 'C', 'D' ]
  * @param {*} node1 node to be checked if has connection with other nodes
  * @param {*} node2 node to be checked if has connection with other nodes
  */
-const isConnected = (node1, node2) => {};
+const isConnected = (node1, node2) => {
+  const node1Idx = hashMap.get(node1);
+  const node2Idx = hashMap.get(node2);
+  return !!adjacencyMatrix[node1Idx][node2Idx]; // !! coerce to boolean
+};
+
+console.log(isConnected('A', 'A')); // false
+console.log(isConnected('A', 'B')); // true
+console.log(isConnected('A', 'C')); // false
+console.log(isConnected('A', 'D')); // true
+console.log(isConnected('A', 'E')); // false
+console.log(isConnected('B', 'A')); // true
+console.log(isConnected('B', 'C')); // true s
