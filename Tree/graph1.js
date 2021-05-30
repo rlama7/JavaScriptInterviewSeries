@@ -44,6 +44,7 @@ function addNode(airport) {
 function addEdge(origin, destination) {
   // BKK --- LAX , i.e.,
   // One can fly from BKK -> LAX and from LAX -> BKK
+
   // get origin then push the destination
   adjacenyList.get(origin).push(destination);
 
