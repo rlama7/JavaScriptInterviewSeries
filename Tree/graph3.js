@@ -14,6 +14,10 @@ class Node {
   getAdjacentNodes() {
     return this.edgesList.map((edge) => edge.data);
   }
+
+  isConnected(node) {
+    return this.edgesList.map((edge) => edge.data).indexOf(node.data) > -1;
+  }
 }
 
 class Graph {
@@ -68,3 +72,13 @@ D
  */
 
 console.log(nodeA.getAdjacentNodes()); // [ 'B', 'D' ]
+console.log(nodeB.getAdjacentNodes()); // [ 'A', 'C' ]
+console.log(nodeC.getAdjacentNodes()); // [ 'B', 'D', 'E']
+console.log(nodeD.getAdjacentNodes()); // [ 'A', 'C', 'E' ]
+console.log(nodeE.getAdjacentNodes()); // [ 'C', 'D' ]
+
+console.log(nodeA.isConnected(nodeA)); // false
+console.log(nodeA.isConnected(nodeB)); // true
+console.log(nodeA.isConnected(nodeC)); // false
+console.log(nodeA.isConnected(nodeD)); // true
+console.log(nodeA.isConnected(nodeE)); // false
