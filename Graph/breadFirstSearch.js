@@ -49,7 +49,18 @@ class Graph {
     this.nodes.push(node);
   }
 
-  // breadth first search Traversal
+  /**
+   * Breadth first search has a time complexity of O(v+e) wherere v is
+   * the number of vertices and e is the number of edges
+   *
+   * The space complexity is O(v) -> queue can grow only as large as number of vertices
+   *
+   * Uses cases: find the shortest path:
+   *
+   *
+   * @param {*} startNode starting node
+   * @param {*} endNode end node
+   */
   breadthFirstTraversal(startNode, endNode) {
     // use queue datastructure
     // queue uses first in first out
