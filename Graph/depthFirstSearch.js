@@ -42,6 +42,41 @@ class Graph {
   addToGraph(node) {
     this.nodes.push(node);
   }
+
+  /**
+   * Depth First Traversal
+   * Keep traversing deeply until
+   * you hit a leaf node and/or end node
+   *
+   * @param {*} startNode start node
+   * @param {*} endNode end node
+   *
+   * Time Complexity:
+   * Depth first search has a time complexity of O(v+e) where
+   * v is the nubmer of vertices and e i is the number of edges
+   * The space complexity is O(v) because the visited array will at most store
+   * each vertex if we traverse the entire graph.
+   *
+   */
+  depthFirstTraversal(startNode, endNode, visitedNode) {
+    if (!visitedNode) {
+      visitedNode = new Set();
+    }
+    // base case
+    if (startNode.data === endNode.data) {
+      console.log('Found it!');
+      return;
+    }
+
+    console.log(`visting node ${startNode.data}`);
+    visitedNode.add(startNode);
+
+    for (const adjacency of startNode.edgesList) {
+      if (!visitedNode.has(adjacency)) {
+        this.depthFirstTraversal(adjacency, endNode, visitedNode);
+      }
+    }
+  }
 }
 
 // create nodes
@@ -72,7 +107,7 @@ JFK.connect(MIA);
 MIA.connect(MCO);
 MCO.connect(PBI);
 
-console.log(graph.nodes[0].edgesList[0]);
+// console.log(graph.nodes[0].edgesList[0]);
 /**
  Graph {
   nodes: [
@@ -88,4 +123,19 @@ console.log(graph.nodes[0].edgesList[0]);
     Node { data: 'PBI', edgesList: [Array] }
   ]
 }
+ */
+
+graph.depthFirstTraversal(DFW, HKG);
+/**
+ * visting node DFW
+visting node LAX
+visting node HNL
+visting node EWR
+visting node SFO
+Found it!
+visting node JFK
+visting node BOS
+visting node MIA
+visting node MCO
+visting node PBI
  */
