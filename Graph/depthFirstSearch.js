@@ -33,4 +33,13 @@ class Node {
   }
 }
 
-class Graph {}
+class Graph {
+  constructor(nodes) {
+    this.nodes = [...nodes];
+  }
+
+  // Add to graph
+  addToGraph(node) {
+    this.nodes.push(node);
+  }
+}
