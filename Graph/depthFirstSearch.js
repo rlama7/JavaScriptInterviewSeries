@@ -8,6 +8,20 @@
  * Backtrack up the branch until you reach a new branch to explore
  *
  * Uses a stack data structure.
+ *
+ * Depth First Search Use Cases:
+ *
+ * Detecting a cycle
+ * Discover whether graph is bipartite
+ *  - A graph whose vertices can be divided into two idependent sets
+ * such as that eveyr edges connects a vertex int he first set to one
+ * in the second set
+ *
+ * Finding a path between two nodes (not necessarily the shortest path)
+ *
+ * Topological sorting
+ *  - where every node in a DAG (Directed acyclic graph)
+ *    appears before all the nodes it points to
  */
 class Node {
   constructor(data) {
