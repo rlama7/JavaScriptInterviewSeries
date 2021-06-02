@@ -76,7 +76,7 @@ console.log(findTreeSumIterative(THREE)); // 36
  * space O(n) --> linear since we'll need to store at most n Nodes in the call stack
  */
 const findTreeSumRecursive = (root) => {
-  // base case
+  // base case if root is empty return 0
   if (root === null) return 0;
 
   return (
