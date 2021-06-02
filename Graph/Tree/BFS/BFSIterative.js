@@ -6,13 +6,13 @@
  *                        of a Binary Tree in JavaScript.
  * @param {*} root root node
  *
- *             A    ------- H_0
+ *             A    ------- H_1
  *          /    \
  *        /       \
- *       B         C ------- H_1
+ *       B         C ------- H_2
  *     /  \      /  \
  *    /    \    /    \
- *   D     E   F     G ------ H_2
+ *   D     E   F     G ------ H_3
  *
  */
 class Node {
@@ -84,3 +84,16 @@ const BFSIterative = (root) => {
 };
 
 console.log(BFSIterative(A)); // ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+/**
+ * Given a root of a tree, find the max depth
+ * @param {*} root root node
+ */
+const maxDepth = (root) => {
+  // base case
+  // if the root is empty return 0
+  if (root === null) return 0;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+};
+
+console.log(`Max Depth is: ${maxDepth(A)}`); // Max Depth is: 3
