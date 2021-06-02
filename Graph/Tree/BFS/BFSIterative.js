@@ -40,6 +40,8 @@ B.right = E;
 C.left = F;
 C.right = G;
 
+// time O(n) -> linear we'll need to visit all the n Nodes
+//  space O(n) -> we'll need to store at most n Nodes in the queue
 const BFSIterative = (root) => {
   /**
    * Breadth first traversal is also known as level order traversal becuase
