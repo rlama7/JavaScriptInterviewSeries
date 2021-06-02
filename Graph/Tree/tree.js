@@ -147,16 +147,14 @@ const breadFirstTraversal = (root) => {
 
   const queue = [root];
   const storeNode = [];
-  const visitedNode = new Set();
+  // const visitedNode = new Set();
 
   while (queue.length) {
     const currentNode = queue.shift(); // take out the first item from the queue
 
-    // if the node has not been visited then push it to storeNode to
+    // push current node to storeNode to
     // print out later
-    if (!visitedNode.has(currentNode)) {
-      storeNode.push(currentNode.data);
-    }
+    storeNode.push(currentNode.data);
 
     // if the current node has left and right children
     // then only push those to the queue
