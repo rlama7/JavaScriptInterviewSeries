@@ -21,11 +21,17 @@ B.left = D;
 B.right = E;
 C.right = F;
 
+console.log('\n-------Depth First Search of Tree Iterative Approach-------');
 /**
  * In a depth first traversal we explore the node and its children as deep as possible
  * before explore its other children
  *
  * @param {*} root root node
+ *
+ * Time Complexity
+ *
+ * time O(n) --> linear --> no# of nodes
+ * space O(n) --> linear --> no# of nodes
  */
 const depthFirstTreeTraversalIterative = (root) => {
   /**
@@ -75,3 +81,24 @@ const depthFirstTreeTraversalIterative = (root) => {
 };
 
 console.log(depthFirstTreeTraversalIterative(A)); // [ 'A', 'B', 'D', 'E', 'C', 'F' ]
+
+console.log('\n-------Depth First Search of Tree Recursive Approach-------');
+
+/**
+ *
+ * @param {*} root root node
+ *
+ * time complexity O(n) -> linear
+ * space complexity O(n) -> linear due to call stack use
+ */
+const depthFirstTreeTraversalRecursive = (root) => {
+  //   const storeNode = [];
+  // if the tree is empty exit
+  if (root === null) return;
+
+  console.log(root.data);
+  depthFirstTreeTraversalRecursive(root.left);
+  depthFirstTreeTraversalRecursive(root.right);
+};
+
+console.log(depthFirstTreeTraversalRecursive(A)); // A B D E C F
