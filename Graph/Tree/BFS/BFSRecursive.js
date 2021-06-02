@@ -45,22 +45,22 @@ C.right = G;
  * Bread first traversal Recursive approach.
  * @param {*} root root node
  */
-const BFSRecursive = (root) => {
-  //empty tree return
-  if (root === null) return -1;
+// const BFSRecursive = (root) => {
+//   //empty tree return
+//   //   if (root === null) return;
 
-  const stack = [root];
+//   const queue = [root];
+//   // base cae
+//   // if a queue is empty return
+//   if (queue.length < 1) return;
 
-  const currentNode = stack.pop();
-  console.log(currentNode.data);
-  // base case
-  // if a node is empty return
-  if (currentNode === null) return;
-  stack.push(currentNode.right);
-  stack.push(currentNode.left);
+//   const currentNode = queue.shift();
+//   console.log(currentNode.data);
 
-  BFSRecursive(currentNode.right);
-  BFSRecursive(currentNode.left);
-};
+//   if (currentNode.right !== null) queue.push(currentNode.right);
+//   if (currentNode.left !== null) queue.push(currentNode.left);
+
+//   BFSRecursive(queue);
+// };
 
 BFSRecursive(A); // A C G F B E D;
