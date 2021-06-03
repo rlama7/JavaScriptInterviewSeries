@@ -6,6 +6,8 @@
  * Valid Topological ordering -
  * [A, C, B, D, F, E]
  * [A, ]
+ *
+ *
  */
 class Node {
   constructor(data) {
