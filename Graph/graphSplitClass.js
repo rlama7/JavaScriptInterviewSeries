@@ -96,7 +96,59 @@ class Graph {
     node.edgesList.push(this);
   }
 
-  isBipartite() {}
+  /**
+   * In order to find if a graph is bipartite first
+   * we'll do a depth first traversal and tweak it as we needed
+   *
+   * Time Complexity
+   * time O(n) ->
+   * space O(n) ->
+   */
+  isBipartite() {
+    // keep track of visited node
+    const visitedNode = new Set();
+
+    // traverse through the nodes
+    for (const node of this.nodes) {
+      if (!visitedNode.has(node)) {
+        if (this.assignLegalColoring(node, visitedNode)) {
+          console.log('Graph is Bipartite');
+          const REDTeam = this.nodes.filter((node) => node.color === 'RED');
+          const BLUETeam = this.nodes.filter((node) => node.color === 'BLUE');
+          console.log('RED Team -> ' + REDTeam.map((e) => e.data));
+          console.log('BLUE Team -> ' + BLUETeam.map((e) => e.data));
+        } else {
+          console.log('Graph is NOT Bipartite');
+        }
+      }
+    }
+  }
+
+  assignLegalColoring(startNode, visitedNode) {
+    // if (visitedNode.has(startNode)) return;
+
+    // assign color to startNode -> RED
+    if (!startNode.color) {
+      startNode.color = 'RED';
+      console.log(`Assigned color ${startNode.color} to ${startNode.data}`);
+    }
+
+    console.log(`Visiting node ${startNode.data}`);
+    visitedNode.add(startNode);
+
+    for (const adjacency of startNode.edgesList) {
+      if (!visitedNode.has(adjacency)) {
+        // assign colors to adjacency
+        adjacency.color = startNode.color === 'RED' ? 'BLUE' : 'RED';
+        console.log(`Assigned color ${adjacency.color} to ${adjacency.data}`);
+
+        if (!this.assignLegalColoring(adjacency, visitedNode)) return false;
+      } else {
+        if (startNode.color === adjacency.color) return false;
+      }
+    }
+    return true;
+  }
 }
 
 // create node
@@ -123,7 +175,13 @@ DAVID.connect(CHRIS);
 CHRIS.connect(BRIAN);
 JOSE.connect(PAUL);
 PAUL.connect(CHRIS);
+// JOSE.connect(CHRIS);
 
 console.log(graph);
 
 graph.isBipartite();
+/**
+ * Graph is Bipartite
+ * [ 'Jack', 'Lucy', 'Jose', 'Chris' ]
+ * [ 'Emily', 'David', 'Brian', 'Paul' ]
+ */
