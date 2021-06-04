@@ -56,10 +56,10 @@ const minimumRewards = (array) => {
       reward[index - 1] = Math.max(reward[index - 1], reward[index] + 1);
     }
   }
-
+  // return reward.reduce((accumulator, value) => accumulator + value);
   return reward;
 };
 
 const array1 = [8, 4, 2, 1, 3, 6, 7, 9, 5];
 
-console.log(minimumRewards(array1)); // [4, 3, 2, 1, 2, 3, 4, 5, 1]
+console.log(minimumRewards(array1)); // [4, 3, 2, 1, 2, 3, 4, 5, 1] -> 25
