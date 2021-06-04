@@ -1,4 +1,9 @@
 /**
+ * minimumReward.js   - A program to find minimum reward awarded for Students.
+ * @author            - Ratna Lama
+ * @version           - 1.0.0
+ * @description       -
+ *
  * Given an inpur array and a reward, write a function to reward students that follows following two rules:
  *  - all students must receive at least one reward
  *  - any given student must receive strictly more rewards than an adjacent student ( a student immediately )
