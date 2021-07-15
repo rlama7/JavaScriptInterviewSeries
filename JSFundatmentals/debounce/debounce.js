@@ -31,13 +31,15 @@ const debounce = (fn, delay) => {
   };
 };
 
-let count = 0;
+// let count = 0;
+const display = debounce((count) => console.log(count++), 3000);
+console.log(dipslay(0));
 
-document.getElementById('btnId').addEventListener(
-  'click',
-  debounce((e) => {
-    console.log(count++);
-    // count= 0, 1, 2, 3 .... chould be console logged after every 3 seconds  or 3000 milliseconds
-    // subsequent clicking the 'Click Me' btn should only produce a sinle console log.
-  }, 3000)
-);
+// document.getElementById('btnId').addEventListener(
+//   'click',
+//   debounce((e) => {
+//     console.log(count++);
+//     // count= 0, 1, 2, 3 .... chould be console logged after every 3 seconds  or 3000 milliseconds
+//     // subsequent clicking the 'Click Me' btn should only produce a single console log.
+//   }, 3000)
+// );
