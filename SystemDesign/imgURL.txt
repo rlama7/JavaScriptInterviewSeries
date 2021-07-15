@@ -1,0 +1,98 @@
+// 100 mil active users daily
+// 20% posting images daily
+// 80% reading/browsing
+// avg images size 1mb
+// 
+
+// calculate
+
+
+// 1. read query/second
+
+query read -> 100 x10^6 /24 * 60 * 60
+
+1160/second
+
+// write query / second
+// 232/s
+
+// storage for 3 years 
+
+20 * 365 *3 x10^6 * 1= 
+// bankdwidth -> 22 Petabyte storage for 3 years
+
+
+// task is 
+// given an image --> POST -->  https://imgur.com/gallery/thjW6Hv
+// shareable --> https://imgur.com/gallery/thjW6Hv
+
+// back end // services // proxy
+
+
+#1 image -> store images --> if success -> generate the link
+
+RESTful services
+
+
+/POST -> to post the images and if successful we'll generate the link
+
+// fast look up data structrue --> hashMap() -> {key: value }
+
+image1 -> uniques value -> {thjW6Hv: imageUrl}  
+image 2  -> 
+
+when createing unique keys -> [lowercaseAlph26abets, upperCaseAlphabets, 0-9]
+26, 26, 10
+
+// when generating uniques keys that map to unique url, consider how many we can unique keys we can generate without running out of unique keys, 
+// key collission
+
+
+// MD5, SHAW65 generate unique keys
+
+For every post request, we'll need to do things:
+save it to AWS S3 bucket that generates url for that image
+
+next we'll map unique hash that we get from to map image url 
+
+once we have successfull hashMap() we can generate the URL 
+{}
+https://imgur.com/gallery/${hashMapKey} --> creating --> counter
+
+Once the image post is successful we can send response 200 with https://imgur.com/gallery/${hashMapKey} 
+
+
+/GET -> to receive the images link
+https://imgur.com/gallery/${hashMapKey} 
+
+url parameter = ${hashMapKey} = req.body.param 
+
+when we get for image request from the client: 
+
+1 directly query database i/o
+3. first check your local cahce // localStorage //image url
+4. reverse proxy such an nginx --> cache server -> cache hit then serveit  - no need to query the database server
+- 10 servers 
+
+22  / 5 severs =~ 4 Petabyte
+
+query to all 5 servers {} --> need to query the database we need to some way optimize the query// 
+optimization -> indexing 
+
+
+// sharding --> [ |  |  | ]--> the image looking
+
+
+// cdn --> US -> [west --  east] | country
+//  request -> california -> closeset end point to the users
+// closet network to the user  -> serve the content.
+
+//-> get data --> cache server --> then only serve
+
+
+2. check if in cache server
+
+
+# database for persistence -> MySQL
+
+# AWS S3 -> images stored in s3 -> imageUrl
